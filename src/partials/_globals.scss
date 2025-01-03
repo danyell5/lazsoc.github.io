@@ -1,0 +1,29 @@
+@import 'variables';
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    color: $textColor;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  section {
+    padding: 100px;
+  
+    @media (max-width: $breakPoint) {
+      padding: 50px 20px;
+    }
+  }  
