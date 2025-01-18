@@ -3,48 +3,59 @@ import { TextLeftRightImageSlide } from './textLeftRightImageSlide';
 import { client } from '../../client'
 
 export const TextLeftRightImage = (props) => {
-    const fetchId = props.fetchId
-    const [isSectionLoading, setIsSectionLoading] = useState(false);
-    const [sectionSlides, setSectionSlides] = useState([]);
+    const { fetchId, variant } = props;
+    const [isLoading, setIsLoading] = useState(false);
+    const [slideData, setSlideData] = useState(null);
 
-    const cleanUpSectionSlides = useCallback((rawData) => {
-        
+    const cleanUpSlideData = useCallback((rawData) => {
         const { sys, fields } = rawData
         const { id } = sys
         const slideTitle = fields.title
         const slideDescription = fields.description
+        const slideDescriptionOne = fields.descriptionOne
         const slideRedirectionUrl = fields.redirectionUrl
-        const slideImage = fields.image.fields.file.url
-        const updatedSlide = { id, slideTitle, slideDescription, slideImage, slideRedirectionUrl }
+        const slideImage = fields.image?.fields?.file?.url
 
-        setSectionSlides(updatedSlide)
+        const updatedSlide = {
+            id,
+            slideTitle,
+            slideDescription,
+            slideDescriptionOne,
+            slideImage,
+            slideRedirectionUrl
+        }
+
+        setSlideData(updatedSlide)
     }, [])
 
-    const getSectionSlides = useCallback(async () => {
-        setIsSectionLoading(true);
+    const getSlideData = useCallback(async () => {
+        setIsLoading(true);
         try {
             const response = await client.getEntry(fetchId)
-            console.log(`API response for fetchId (${JSON.stringify(fetchId)}):`, response);
             if (response) {
-                cleanUpSectionSlides(response);
+                cleanUpSlideData(response);
             } else {
-                setSectionSlides([])
+                setSlideData(null)
             }
-            setIsSectionLoading(false);
+            setIsLoading(false);
         } catch (error) {
-            setIsSectionLoading(false);
+            console.error('Error fetching slide data:', error);
+            setSlideData(null)
+            setIsLoading(false);
         }
-    }, [cleanUpSectionSlides])
+    }, [cleanUpSlideData, fetchId])
 
     useEffect(() => {
-        getSectionSlides()
-    }, [getSectionSlides]);
+        getSlideData()
+    }, [getSlideData]);
 
+    if (!slideData) return null;
 
     return (
-        <div>
-           <TextLeftRightImageSlide key={sectionSlides.id} slideTitle={sectionSlides.slideTitle} slideDescription={sectionSlides.slideDescription} slideImage={sectionSlides.slideImage} slideRedirectionURL={sectionSlides.slideRedirectionUrl}/>  
-        </div>
+        <TextLeftRightImageSlide 
+            {...slideData}
+            variant={variant}
+        />
     )
 }
 

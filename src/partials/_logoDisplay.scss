@@ -1,0 +1,299 @@
+.logo-display {
+    width: 100%;
+    padding: 40px 0 80px;
+    background-color: #fdf8f4;
+    max-width: 1910px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+
+    &.homepage {
+        background-color: #fff;
+    }
+
+    &.clubsAssociations {
+        background-color: #FCF7F2;
+
+        .header-content {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+
+            .title-section {
+                flex: 1;
+
+                .title {
+                    text-align: left;
+                    font-size: 40px;
+                    margin-bottom: 15px;
+                }
+
+                .description {
+                    text-align: left;
+                    max-width: 600px;
+                }
+            }
+
+            .filter-toggle-button {
+                padding: 12px 25px;
+                background-color: #fff;
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                color: #333;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                margin-top: 10px;
+
+                &:hover {
+                    background-color: #f8f8f8;
+                }
+
+                .toggle-arrow {
+                    font-size: 12px;
+                    transition: transform 0.3s ease;
+
+                    &.open {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        .filters-section {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            width: 100%;
+
+            .filter-container {
+                background-color: #fff;
+                padding: 20px 40px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: flex-start;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: all 0.3s ease;
+                padding: 0 40px;
+
+                &.show {
+                    max-height: 300px;
+                    opacity: 1;
+                    padding: 20px 40px;
+                }
+
+                .filter-button {
+                    padding: 8px 16px;
+                    border: 2px solid #FFBF40;
+                    border-radius: 20px;
+                    background: transparent;
+                    color: #333;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background: #FFBF40;
+                        color: white;
+                    }
+
+                    &.active {
+                        background: #FFBF40;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .logos-grid {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            min-height: 400px;
+            align-items: start;
+            justify-content: start;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+
+            .logo-item {
+                background: none;
+                box-shadow: none;
+                width: 100%;
+                height: 180px;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+
+                img {
+                    width: 90%;
+                    height: 90%;
+                    object-fit: contain;
+                    padding: 10px;
+                }
+            }
+
+            @media (max-width: 1024px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+                min-height: 300px;
+
+                .logo-item {
+                    height: 150px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                min-height: 200px;
+
+                .logo-item {
+                    height: 130px;
+                }
+            }
+        }
+    }
+
+    .header-content {
+        text-align: center;
+        margin-bottom: 60px;
+
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+
+    .logos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        align-items: center;
+        justify-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .logo-item {
+            width: 100%;
+            max-width: 200px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 20px;
+
+        .header-content {
+            margin-bottom: 40px;
+
+            .title {
+                font-size: 32px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+        }
+
+        .logos-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+
+            .logo-item {
+                max-width: 150px;
+                height: 100px;
+                padding: 15px;
+            }
+        }
+
+        &.clubsAssociations {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+
+                .title-section {
+                    .title {
+                        font-size: 32px;
+                    }
+
+                    .description {
+                        font-size: 16px;
+                    }
+                }
+
+                .filter-toggle-button {
+                    width: 100%;
+                    justify-content: center;
+                    margin-top: 0;
+                }
+            }
+
+            .filters-section {
+                .filter-container {
+                    padding: 15px 20px;
+                    
+                    &.show {
+                        padding: 15px 20px;
+                    }
+                    
+                    .filter-button {
+                        padding: 6px 12px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+} 

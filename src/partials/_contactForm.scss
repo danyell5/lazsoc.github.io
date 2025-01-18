@@ -1,0 +1,140 @@
+.contact-form-wrapper {
+    width: 100%;
+    background-color: #fdf8f4;
+    padding: 40px 20px;
+}
+
+.contact-form {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid #9E6EDB;
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+    }
+
+    .success-message {
+        text-align: center;
+        padding: 40px 20px;
+
+        h3 {
+            color: #006600;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 24px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: #9E6EDB;
+            }
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 14px;
+        background-color: #9E6EDB;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken(#9E6EDB, 10%);
+        }
+    }
+
+    .status-message {
+        margin-top: 16px;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+
+        &.success {
+            background-color: #e6ffe6;
+            color: #006600;
+        }
+
+        &.error {
+            background-color: #ffe6e6;
+            color: #cc0000;
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin: 0;
+        padding: 20px;
+
+        h2 {
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+
+            label {
+                font-size: 14px;
+            }
+
+            input, textarea {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+
+        .submit-button {
+            padding: 12px;
+            font-size: 14px;
+        }
+    }
+} 

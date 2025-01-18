@@ -1,29 +1,39 @@
 @import 'variables';
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 *, *:before, *:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
-  * {
+* {
     scroll-behavior: smooth;
-  }
+}
   
-  body {
+body {
     margin: 0;
     padding: 0;
+    padding-top: 76px;
     color: $textColor;
     font-weight: 300;
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+}
   
-  section {
+section {
     padding: 100px;
+    width: 100%;
+    max-width: 100vw;
   
     @media (max-width: $breakPoint) {
-      padding: 50px 20px;
+        padding: 50px 20px;
     }
-  }  
+}  

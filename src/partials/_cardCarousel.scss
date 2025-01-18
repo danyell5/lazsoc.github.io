@@ -1,0 +1,194 @@
+section.card-carousel {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #fdf8f4;
+
+    .carousel-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        overflow: hidden;
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            padding: 20px 0;
+
+            .card {
+                position: relative;
+                width: 600px;
+                min-height: 300px;
+                margin: 0 auto;
+                cursor: grab;
+                user-select: none;
+                touch-action: pan-y pinch-zoom;
+
+                &:active {
+                    cursor: grabbing;
+                }
+
+                .prev-card,
+                .current-card,
+                .next-card {
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: white;
+                    padding: 40px;
+                    border-radius: 16px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    border: 5px solid #9E6EDB;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+
+                    h3 {
+                        color: #333;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 700;
+                        font-size: 24px;
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+
+                    p {
+                        color: #333;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 16px;
+                        line-height: 1.6;
+                        text-align: center;
+                    }
+                }
+
+                .current-card {
+                    z-index: 1;
+                    left: 0;
+                    pointer-events: none;
+                }
+
+                .prev-card,
+                .next-card {
+                    opacity: 0.5;
+                    filter: blur(2px);
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        opacity: 0.7;
+                        filter: blur(1px);
+                        transform: scale(1.02);
+                    }
+                }
+
+                .prev-card {
+                    left: -620px;
+                }
+
+                .next-card {
+                    left: 620px;
+                }
+            }
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+
+            .dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #ddd;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #bbb;
+                }
+
+                &.active {
+                    background-color: #9E6EDB;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    &.homepage {
+        background-color: white;
+        padding: 60px 0;
+
+        .card {
+            .prev-card,
+            .current-card,
+            .next-card {
+                border-color: #FDB518;
+            }
+        }
+
+        .carousel-dots {
+            .dot {
+                &.active {
+                    background-color: #FDB518;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 0;
+
+        .carousel-wrapper {
+            padding: 0 15px;
+
+            .carousel-container {
+                .card {
+                    width: 400px;
+
+                    .prev-card,
+                    .current-card,
+                    .next-card {
+                        padding: 30px;
+                        min-height: 250px;
+
+                        h3 {
+                            font-size: 20px;
+                            margin-bottom: 15px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .prev-card {
+                        left: -420px;
+                    }
+
+                    .next-card {
+                        left: 420px;
+                    }
+                }
+            }
+
+            .carousel-dots {
+                margin-top: 20px;
+                gap: 10px;
+
+                .dot {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+} 

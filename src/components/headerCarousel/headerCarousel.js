@@ -3,17 +3,16 @@ import HeaderCarouselSlide from './headerCarouselSlide';
 import { client } from '../../client'
 
 export const HeaderCarousel = (props) => {
-    const fetchId = props.fetchId
+    const { fetchId, variant } = props;
     const [isCarsouselLoading, setIsCarouselLoading] = useState(false);
     const [carouselSlides, setCarouselSlides] = useState([]);
 
     const cleanUpCarouselSlides = useCallback((rawData) => {
-        
         const { sys, fields } = rawData
         const { id } = sys
         const slideTitle = fields.title
         const slideDescription = fields.description
-        const slideImage = fields.image.fields.file.url
+        const slideImage = fields.image?.fields?.file?.url
         const updatedSlide = { id, slideTitle, slideDescription, slideImage }
 
         setCarouselSlides(updatedSlide)
@@ -23,7 +22,6 @@ export const HeaderCarousel = (props) => {
         setIsCarouselLoading(true);
         try {
             const response = await client.getEntry(fetchId)
-            console.log(`API response for fetchId (${JSON.stringify(fetchId)}):`);
             if (response) {
                 cleanUpCarouselSlides(response);
             } else {
@@ -42,7 +40,13 @@ export const HeaderCarousel = (props) => {
 
     return (
         <div>
-           <HeaderCarouselSlide key={carouselSlides.id} slideTitle={carouselSlides.slideTitle} slideDescription={carouselSlides.slideDescription} slideImage={carouselSlides.slideImage} />  
+            <HeaderCarouselSlide 
+                key={carouselSlides.id} 
+                slideTitle={carouselSlides.slideTitle} 
+                slideDescription={carouselSlides.slideDescription} 
+                slideImage={carouselSlides.slideImage}
+                variant={variant}
+            />
         </div>
     )
 }

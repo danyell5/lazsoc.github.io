@@ -1,6 +1,6 @@
 // AboutPage.js
 import React from 'react';
-import { TextLeftRightImage } from '../components/leftTextRightImage/textLeftRightImage';
+
 const AboutPage = () => {
   return (
     <div className="about-page">

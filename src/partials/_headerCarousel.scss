@@ -1,5 +1,7 @@
 .slideWrap {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 91vh;
+    max-height: 91vh;
     width: 100%;
     display: flex;
     padding: 80px;
@@ -7,38 +9,78 @@
     justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     position: relative;
+    overflow: hidden;
+  
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+  
+    &.clubsAssociation {
+        &::before {
+            display: none;
+        }
+  
+        .textWrap {
+            h2 {
+                color: #FFBF40;
+                text-shadow: none;
+            }
+  
+            p {
+                color: #FFBF40;
+            }
+        }
+    }
+  
+    &.hiringClubsPage {
+        .textWrap {
+            h2 {
+                color: #FFBF40;
+            }
+        }
+    }
+  
+    .textWrap {
+        max-width: 900px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+  
+        h2 {
+            font-size: 4.5em;
+            line-height: 1.1;
+            color: $white;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  
+            @media (max-width: $breakPoint) {
+                font-size: 2.5em;
+            }
+        }
+  
+        p {
+            font-size: 1em;
+            color: #fff;
+        }
+    }
   
     @media (max-width: 760px) and (orientation: landscape) {
-      min-height: 110vh;
-      padding: 70px 20px;
+        height: 100vh;
+        padding: 70px 20px;
     }
   
     @media (max-width: 760px) and (orientation: portrait) {
-      min-height: 80vh;
-      padding: 70px 20px;
+        height: 100vh;
+        padding: 70px 20px;
     }
 }
-
-.textWrap {
-    max-width: 900px;
-    text-align: center;
-  
-    h2 {
-      font-size: 4.5em;
-      line-height: 1.1;
-      color: $white;
-      margin-bottom: 10px;
-      text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
-  
-      @media (max-width: $breakPoint) {
-        font-size: 2.5em;
-      }
-    }
-  
-    p {
-      font-size: 1em;
-      color: #fff;
-    }
-  }
   
