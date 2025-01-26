@@ -1,8 +1,22 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export const TwoTextFourImageSlide = (props) => {
     const { id, images, imageTitles, slideTitle, slideDescription, variant } = props;
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
+
+    const handleImageClick = (title) => {
+        if (title === "Business Formal Rental Program") {
+            navigate('/shop/business-formal');
+        } else if (title === "Club Memberships") {
+            navigate('/shop/club-memberships');
+        } else if (title === "Events") {
+            navigate('/shop/events');
+        } else if (title === "Merchandise") {
+            navigate('/shop/merchandise');
+        }
+    };
 
     const getVariantClass = () => {
         switch(variant) {
@@ -68,7 +82,12 @@ export const TwoTextFourImageSlide = (props) => {
                 </div>
                 <div className="images-container">
                     {displayImages.map((item, index) => (
-                        <div key={index} className="image-item">
+                        <div 
+                            key={index} 
+                            className="image-item"
+                            onClick={() => handleImageClick(item.title)}
+                            style={{ cursor: item.title === "Business Formal Rental Program" ? 'pointer' : 'default' }}
+                        >
                             <img src={item.image} alt={item.title || `Image ${index + 1}`} />
                             {item.title && (
                                 <div className="image-title">{item.title}</div>
@@ -87,7 +106,12 @@ export const TwoTextFourImageSlide = (props) => {
                 <p className="description">{slideDescription}</p>
                 <div className="images-container">
                     {images?.map((image, index) => (
-                        <div key={index} className="image-item">
+                        <div 
+                            key={index} 
+                            className="image-item"
+                            onClick={() => handleImageClick(imageTitles[index])}
+                            style={{ cursor: imageTitles[index] === "Business Formal Rental Program" ? 'pointer' : 'default' }}
+                        >
                             <img src={image} alt={imageTitles?.[index] || `Image ${index + 1}`} />
                             {imageTitles?.[index] && (
                                 <div className="image-title">{imageTitles[index]}</div>

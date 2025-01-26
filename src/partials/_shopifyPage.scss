@@ -1,0 +1,45 @@
+.shopify-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FCF7F2;
+
+    .shopify-content {
+        flex: 1;
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+
+        h1 {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 40px;
+        }
+
+        #collection-component-1737766356028 {
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .shopify-content {
+            padding: 20px;
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            #collection-component-1737766356028 {
+                padding: 20px;
+            }
+        }
+    }
+} 

@@ -15,8 +15,9 @@ export const TwoTextFourImage = (props) => {
         const slideDescription = fields.description
         
         // Handle multiple images
+        console.log(fields);
         const images = fields.images?.map(image => image.fields.file.url) || []
-        const imageTitles = fields.imageTitles || []
+        const imageTitles = fields.images?.map(image => image.fields.title) || []
 
         const updatedSlide = {
             id,
