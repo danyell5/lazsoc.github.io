@@ -50,7 +50,7 @@
 
         .images-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, 433px);
+            grid-template-columns: repeat(2, minmax(0, 433px));
             gap: 24px;
             margin: 0 auto;
             justify-content: center;
@@ -64,8 +64,9 @@
                 text-align: center;
 
                 img {
-                    width: 433px;
-                    height: 433px;
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1;
                     object-fit: cover;
                     border-radius: 8px;
                     margin-bottom: 12px;
@@ -105,7 +106,7 @@
             }
 
             .images-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
 
                 .image-item img {

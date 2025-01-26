@@ -12,6 +12,9 @@
     background-position: center;
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   
     &::before {
         content: '';
@@ -22,6 +25,7 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
         z-index: 1;
+        will-change: opacity;
     }
   
     &.clubsAssociation {
@@ -54,17 +58,15 @@
         text-align: center;
         position: relative;
         z-index: 2;
+        will-change: transform, opacity;
+        transform: translateZ(0);
   
         h2 {
-            font-size: 4.5em;
+            font-size: clamp(2.5em, 5vw, 4.5em);
             line-height: 1.1;
             color: $white;
             margin-bottom: 10px;
             text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
-  
-            @media (max-width: $breakPoint) {
-                font-size: 2.5em;
-            }
         }
   
         p {
@@ -73,14 +75,9 @@
         }
     }
   
-    @media (max-width: 760px) and (orientation: landscape) {
-        height: 100vh;
+    @media (max-width: 760px) {
         padding: 70px 20px;
-    }
-  
-    @media (max-width: 760px) and (orientation: portrait) {
         height: 100vh;
-        padding: 70px 20px;
     }
 }
   

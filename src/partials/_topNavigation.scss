@@ -20,6 +20,16 @@
     }
   }
 
+  // Hide mobile menu elements by default (desktop view)
+  .hamburger-menu {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  // Desktop Navigation
   .nav-links {
     display: flex;
     list-style: none;
@@ -155,21 +165,175 @@
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 6px 20px;
+  // Mobile and Tablet Styles
+  @media (max-width: 1023px) {
+    padding: 8px 20px;
 
     .nav-left .logo {
       height: 45px;
       width: 120px;
     }
 
+    // Hide desktop navigation
     .nav-links {
-      gap: 12px;
-      
-      .nav-link, .dropdown {
-        font-size: 14px;
-        padding: 4px 6px;
+      display: none;
+    }
+
+    // Show mobile menu button
+    .hamburger-menu {
+      display: block;
+      width: 30px;
+      height: 24px;
+      position: relative;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+
+      span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+
+        &:nth-child(1) { top: 0; }
+        &:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        &:nth-child(3) { bottom: 0; }
       }
+
+      &.active {
+        span {
+          &:nth-child(1) {
+            transform: rotate(45deg);
+            top: 50%;
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+            bottom: 50%;
+          }
+        }
+      }
+    }
+
+    // Mobile Navigation Panel
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 61px;
+      left: 0;
+      right: 0;
+      background: #FCF7F2;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-height: calc(100vh - 61px);
+      overflow-y: auto;
+
+      &.active {
+        display: block;
+      }
+
+      .mobile-nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin-bottom: 12px;
+          list-style-type: none;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        .nav-link {
+          display: block;
+          padding: 12px 0;
+          color: #333;
+          text-decoration: none;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+          &.active {
+            font-weight: 600;
+            color: #333;
+          }
+        }
+
+        .mobile-dropdown {
+          .dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 12px 0;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            background: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+
+            .dropdown-arrow {
+              transition: transform 0.3s ease;
+
+              &.open {
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          .mobile-dropdown-menu {
+            display: none;
+            padding-left: 20px;
+            list-style: none;
+            margin: 0;
+
+            &.show {
+              display: block;
+            }
+
+            li {
+              list-style-type: none;
+              margin: 0;
+            }
+
+            .dropdown-item {
+              display: block;
+              padding: 12px 0;
+              color: #333;
+              text-decoration: none;
+              font-size: 15px;
+              font-weight: 500;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+              &.active {
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Mobile-specific styles
+  @media (max-width: 767px) {
+    padding: 6px 20px;
+
+    .nav-left .logo {
+      height: 40px;
+      width: 110px;
     }
   }
 }
