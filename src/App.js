@@ -10,6 +10,10 @@ import BusinessFormalRentalProgram from './pages/BusinessFormalRentalProgram';
 import ClubMemberships from './pages/ClubMemberships';
 import Events from './pages/events';
 import Merchandise from './pages/merchandise';
+import { getShopifyUI } from './utils/shopifyLoader';
+
+// Preload Shopify as soon as the app loads
+getShopifyUI().catch(console.error);
 
 function App() {
   return (
