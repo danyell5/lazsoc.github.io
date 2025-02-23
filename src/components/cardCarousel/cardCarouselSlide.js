@@ -15,15 +15,28 @@ export const CardCarouselSlide = (props) => {
     };
 
     const goToCard = (index) => {
-        setCurrentIndex(index);
+        // Handle looping
+        if (cards.length > 1) {
+            if (index < 0) {
+                setCurrentIndex(cards.length - 1);
+            } else if (index >= cards.length) {
+                setCurrentIndex(0);
+            } else {
+                setCurrentIndex(index);
+            }
+        } else {
+            setCurrentIndex(0);
+        }
         setCurrentX(0);
     };
 
     const getPrevIndex = () => {
+        if (cards.length <= 1) return 0;
         return currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
     };
 
     const getNextIndex = () => {
+        if (cards.length <= 1) return 0;
         return currentIndex === cards.length - 1 ? 0 : currentIndex + 1;
     };
 
@@ -57,22 +70,21 @@ export const CardCarouselSlide = (props) => {
         if (Math.abs(currentX) > threshold) {
             if (currentX > 0) {
                 // Dragged right - go to previous
-                goToCard(getPrevIndex());
+                goToCard(currentIndex - 1);
             } else {
                 // Dragged left - go to next
-                goToCard(getNextIndex());
+                goToCard(currentIndex + 1);
             }
         }
         setCurrentX(0);
     };
 
     const handleCardClick = (e, direction) => {
-        // Only handle click if we haven't dragged
         if (Math.abs(currentX) < dragThreshold) {
             if (direction === 'prev') {
-                goToCard(getPrevIndex());
+                goToCard(currentIndex - 1);
             } else if (direction === 'next') {
-                goToCard(getNextIndex());
+                goToCard(currentIndex + 1);
             }
         }
     };
@@ -85,7 +97,49 @@ export const CardCarouselSlide = (props) => {
         };
     };
 
+    const renderCardContent = (card) => {
+        return (
+            <>
+                <h3 className={!card.description ? 'title-only' : ''}>
+                    {card.title}
+                </h3>
+                {card.description && (
+                    <p style={getTextStyle(card.description)}>
+                        {card.description}
+                    </p>
+                )}
+                {card.hyperlinkText && card.hyperlink && (
+                    <a 
+                        href={card.hyperlink} 
+                        className="card-link-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {card.hyperlinkText}
+                    </a>
+                )}
+            </>
+        );
+    };
+
     if (!cards || cards.length === 0) return null;
+
+    // If there's only one card, just show it without navigation
+    if (cards.length === 1) {
+        return (
+            <section className={`card-carousel ${getVariantClass()}`}>
+                <div className="carousel-wrapper">
+                    <div className="carousel-container">
+                        <div className="card">
+                            <div className="current-card">
+                                {renderCardContent(cards[0])}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className={`card-carousel ${getVariantClass()}`}>
@@ -107,25 +161,16 @@ export const CardCarouselSlide = (props) => {
                             className="prev-card"
                             onClick={(e) => handleCardClick(e, 'prev')}
                         >
-                            <h3>{cards[getPrevIndex()].title}</h3>
-                            <p style={getTextStyle(cards[getPrevIndex()].description)}>
-                                {cards[getPrevIndex()].description}
-                            </p>
+                            {renderCardContent(cards[getPrevIndex()])}
                         </div>
                         <div className="current-card">
-                            <h3>{cards[currentIndex].title}</h3>
-                            <p style={getTextStyle(cards[currentIndex].description)}>
-                                {cards[currentIndex].description}
-                            </p>
+                            {renderCardContent(cards[currentIndex])}
                         </div>
                         <div 
                             className="next-card"
                             onClick={(e) => handleCardClick(e, 'next')}
                         >
-                            <h3>{cards[getNextIndex()].title}</h3>
-                            <p style={getTextStyle(cards[getNextIndex()].description)}>
-                                {cards[getNextIndex()].description}
-                            </p>
+                            {renderCardContent(cards[getNextIndex()])}
                         </div>
                     </div>
                 </div>

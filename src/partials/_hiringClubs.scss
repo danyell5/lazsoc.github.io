@@ -1,0 +1,59 @@
+.hiring-disclaimer {
+    width: 100%;
+    padding: 40px 20px;
+    background: #FCF7F2;  // Match the beige background
+    margin-top: -20px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('../images/star.png') repeat;
+        opacity: 0.05;
+        animation: floatBackground 20s linear infinite;
+    }
+
+    .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        border: 5px solid #53449B;
+        box-shadow: 0 4px 12px rgba(83, 68, 155, 0.1);
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: #53449B;
+            margin-bottom: 10px;
+            text-shadow: none;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #53449B;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+    }
+}
+
+@keyframes floatBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+} 

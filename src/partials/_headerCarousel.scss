@@ -27,6 +27,101 @@
         z-index: 1;
         will-change: opacity;
     }
+
+    &.homepage {
+        height: 100vh;
+        min-height: 100vh;
+        max-height: none;
+        padding: 0;
+
+        &::before {
+            background-color: transparent;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.67) 19.5%, rgba(255, 255, 255, 0.45) 38.5%, rgba(255, 255, 255, 0.18) 52.5%);
+        }
+
+        .textWrap {
+            transform: translateY(-30vh);
+            position: relative;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 42px;
+                left: 790px;
+                width: 45px;
+                height: 45px;
+                background-image: url('../images/star.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 3;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 30px;
+                right: -100px;
+                width: calc(374.841px * 0.7);
+                height: calc(142.31px * 0.7);
+                background-image: url('../images/eclipse.png');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                z-index: 3;
+                transform: rotate(10deg);
+                stroke: #53449B;
+                stroke-width: 4.603px;
+            }
+            
+            h2 {
+                color: #53449B;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 65px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-shadow: none;
+                position: relative;
+            }
+
+            @media (max-width: 1024px) {
+                h2 {
+                    font-size: clamp(40px, 8vw, 88.375px);
+                }
+
+                &::before {
+                    width: 30px;
+                    height: 30px;
+                    top: 5px;
+                    left: 10px;
+                }
+
+                &::after {
+                    width: calc(374.841px * 0.5);
+                    height: calc(142.31px * 0.5);
+                    bottom: -15px;
+                    right: -60px;
+                    transform: rotate(26.239deg);
+                }
+            }
+
+            @media (max-width: 760px) {
+                &::before {
+                    width: 25px;
+                    height: 25px;
+                    top: 0px;
+                    left: 5px;
+                }
+
+                &::after {
+                    width: calc(374.841px * 0.35);
+                    height: calc(142.31px * 0.35);
+                    bottom: -10px;
+                    right: -40px;
+                    transform: rotate(26.239deg);
+                }
+            }
+        }
+    }
   
     &.clubsAssociation {
         &::before {

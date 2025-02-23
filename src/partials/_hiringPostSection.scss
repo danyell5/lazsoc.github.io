@@ -1,0 +1,177 @@
+.hiring-post-section {
+    padding: 40px 0;
+    width: 100%;
+    background-color: #FCF7F2;
+
+    .section-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 36px;
+        font-weight: 800;
+        color: #333;
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+
+.hiring-post-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .image-container {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border-bottom: 3px solid #000;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .title-container {
+        padding: 20px;
+        text-align: center;
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+
+    .modal-content {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        max-width: 600px;
+        width: 100%;
+        position: relative;
+        max-height: 90vh;
+        overflow-y: auto;
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            padding: 5px;
+            line-height: 1;
+
+            &:hover {
+                color: #53449B;
+            }
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            padding-right: 40px;
+        }
+
+        .modal-description {
+            margin-bottom: 30px;
+
+            pre {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #666;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                margin: 0;
+                padding: 0;
+                background: none;
+                border: none;
+            }
+        }
+
+        .apply-button {
+            display: inline-block;
+            background: #53449B;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background: #9e6edb;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hiring-post-section {
+        padding: 30px 15px;
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .posts-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+    }
+
+    .modal-overlay {
+        padding: 15px;
+
+        .modal-content {
+            padding: 30px;
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    }
+} 

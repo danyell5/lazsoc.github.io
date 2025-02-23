@@ -24,11 +24,11 @@ const Footer = () => {
                     <div className="footer-nav">
                         <button onClick={scrollToTop} className="back-to-top">Back to Top</button>
                         <a href="/" onClick={handleNavClick('/')}>Home</a>
-                        <a href="/lazsoc" onClick={handleNavClick('/lazsoc')}>LazSoc</a>
+                        <a href="/lazsoc" onClick={handleNavClick('/about/team')}>LazSoc</a>
                         <a href="/clubs-associations" onClick={handleNavClick('/clubs-associations')}>Clubs</a>
-                        <a href="/hiring" onClick={handleNavClick('/hiring')}>Hiring</a>
+                        <a href="/hiring" onClick={handleNavClick('/hiring-clubs')}>Hiring</a>
                         <a href="/resources" onClick={handleNavClick('/resources')}>Resources</a>
-                        <a href="/refund-policy" onClick={handleNavClick('/refund-policy')}>Refund Policy</a>
+                        <a href="/refund-policy" onClick={handleNavClick('/resources/refund-policy')}>Refund Policy</a>
                     </div>
 
                     <div className="footer-acknowledgment">

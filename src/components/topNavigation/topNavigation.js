@@ -6,10 +6,12 @@ const TopNavigation = () => {
     const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
     const [involvedDropdownOpen, setInvolvedDropdownOpen] = useState(false);
     const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
+    const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
     const [mobileInvolvedOpen, setMobileInvolvedOpen] = useState(false);
     const [mobileShopOpen, setMobileShopOpen] = useState(false);
+    const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
     const location = useLocation();
 
     const toggleAboutDropdown = () => {
@@ -22,6 +24,10 @@ const TopNavigation = () => {
 
     const toggleShopDropdown = () => {
         setShopDropdownOpen((prev) => !prev);
+    };
+
+    const toggleResourcesDropdown = () => {
+        setResourcesDropdownOpen((prev) => !prev);
     };
 
     const toggleMobileMenu = () => {
@@ -40,9 +46,14 @@ const TopNavigation = () => {
         setMobileShopOpen((prev) => !prev);
     };
 
-    const isAboutDropdownActive = ['/aboutUs', '/about-good-eats'].includes(location.pathname);
+    const toggleMobileResources = () => {
+        setMobileResourcesOpen((prev) => !prev);
+    };
+
+    const isAboutDropdownActive = ['/about/team', '/about/waterloo-favs', '/about/business-bytes'].includes(location.pathname);
     const isInvolvedDropdownActive = ['/clubs-associations', '/hiring-clubs'].includes(location.pathname);
     const isShopDropdownActive = ['/shop/business-formal', '/shop/club-memberships', '/shop/events', '/shop/merchandise'].includes(location.pathname);
+    const isResourcesDropdownActive = ['/resources/election', '/resources/policies', '/resources/student', '/resources/refund-policy'].includes(location.pathname);
 
     return (
         <nav className="top-navigation">
@@ -63,8 +74,9 @@ const TopNavigation = () => {
                 >
                     About <span className={`dropdown-arrow ${aboutDropdownOpen ? 'open' : ''}`}>&#9660;</span>
                     <ul className={`dropdown-menu ${aboutDropdownOpen ? 'show' : ''}`}>
-                        <li><NavLink to="/aboutUs" className="dropdown-item">About Us</NavLink></li>
-                        <li><NavLink to="/about-good-eats" className="dropdown-item">About Good Eats</NavLink></li>
+                        <li><NavLink to="/about/team" className="dropdown-item">The Team</NavLink></li>
+                        <li><NavLink to="/about/waterloo-favs" className="dropdown-item">Our Waterloo Favs</NavLink></li>
+                        <li><NavLink to="/about/business-bytes" className="dropdown-item">Business Bytes</NavLink></li>
                     </ul>
                 </li>
 
@@ -91,6 +103,20 @@ const TopNavigation = () => {
                         <li><NavLink to="/shop/club-memberships" className="dropdown-item">Club Memberships</NavLink></li>
                         <li><NavLink to="/shop/events" className="dropdown-item">Events</NavLink></li>
                         <li><NavLink to="/shop/merchandise" className="dropdown-item">Merchandise</NavLink></li>
+                    </ul>
+                </li>
+
+                <li 
+                    className={`nav-link dropdown ${isResourcesDropdownActive ? 'active' : ''}`}
+                    onMouseEnter={toggleResourcesDropdown} 
+                    onMouseLeave={toggleResourcesDropdown}
+                >
+                    Resources <span className={`dropdown-arrow ${resourcesDropdownOpen ? 'open' : ''}`}>&#9660;</span>
+                    <ul className={`dropdown-menu ${resourcesDropdownOpen ? 'show' : ''}`}>
+                        <li><NavLink to="/resources/election" className="dropdown-item">Election Resources</NavLink></li>
+                        <li><NavLink to="/resources/policies" className="dropdown-item">Policies</NavLink></li>
+                        <li><NavLink to="/resources/student" className="dropdown-item">Student Resources</NavLink></li>
+                        <li><NavLink to="/resources/refund-policy" className="dropdown-item">Refund Policy</NavLink></li>
                     </ul>
                 </li>
 
@@ -122,8 +148,9 @@ const TopNavigation = () => {
                             <span className={`dropdown-arrow ${mobileAboutOpen ? 'open' : ''}`}>&#9660;</span>
                         </button>
                         <ul className={`mobile-dropdown-menu ${mobileAboutOpen ? 'show' : ''}`}>
-                            <li><NavLink to="/aboutUs" className="dropdown-item" onClick={toggleMobileMenu}>About Us</NavLink></li>
-                            <li><NavLink to="/about-good-eats" className="dropdown-item" onClick={toggleMobileMenu}>About Good Eats</NavLink></li>
+                            <li><NavLink to="/about/team" className="dropdown-item" onClick={toggleMobileMenu}>The Team</NavLink></li>
+                            <li><NavLink to="/about/waterloo-favs" className="dropdown-item" onClick={toggleMobileMenu}>Our Waterloo Favs</NavLink></li>
+                            <li><NavLink to="/about/business-bytes" className="dropdown-item" onClick={toggleMobileMenu}>Business Bytes</NavLink></li>
                         </ul>
                     </li>
 
@@ -154,6 +181,22 @@ const TopNavigation = () => {
                             <li><NavLink to="/shop/club-memberships" className="dropdown-item" onClick={toggleMobileMenu}>Club Memberships</NavLink></li>
                             <li><NavLink to="/shop/events" className="dropdown-item" onClick={toggleMobileMenu}>Events</NavLink></li>
                             <li><NavLink to="/shop/merchandise" className="dropdown-item" onClick={toggleMobileMenu}>Merchandise</NavLink></li>
+                        </ul>
+                    </li>
+
+                    <li className="mobile-dropdown">
+                        <button 
+                            className="dropdown-toggle"
+                            onClick={toggleMobileResources}
+                        >
+                            Resources
+                            <span className={`dropdown-arrow ${mobileResourcesOpen ? 'open' : ''}`}>&#9660;</span>
+                        </button>
+                        <ul className={`mobile-dropdown-menu ${mobileResourcesOpen ? 'show' : ''}`}>
+                            <li><NavLink to="/resources/election" className="dropdown-item" onClick={toggleMobileMenu}>Election Resources</NavLink></li>
+                            <li><NavLink to="/resources/policies" className="dropdown-item" onClick={toggleMobileMenu}>Policies</NavLink></li>
+                            <li><NavLink to="/resources/student" className="dropdown-item" onClick={toggleMobileMenu}>Student Resources</NavLink></li>
+                            <li><NavLink to="/resources/refund-policy" className="dropdown-item" onClick={toggleMobileMenu}>Refund Policy</NavLink></li>
                         </ul>
                     </li>
 

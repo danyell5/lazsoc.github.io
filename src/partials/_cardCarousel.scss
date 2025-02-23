@@ -45,6 +45,7 @@ section.card-carousel {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    align-items: center;
                     transition: all 0.3s ease;
 
                     h3 {
@@ -54,6 +55,15 @@ section.card-carousel {
                         font-size: 24px;
                         margin-bottom: 20px;
                         text-align: center;
+                        width: 100%;
+
+                        &.title-only {
+                            font-size: 32px;
+                            margin: 0;
+                            text-align: center;
+                            width: 80%;
+                            margin-bottom: 20px;
+                        }
                     }
 
                     p {
@@ -62,6 +72,45 @@ section.card-carousel {
                         font-size: 16px;
                         line-height: 1.6;
                         text-align: center;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+
+                    .card-link-button {
+                        display: inline-block;
+                        background-color: #53449B;
+                        color: white;
+                        text-decoration: none;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 14px;
+                        font-weight: 600;
+                        transition: background-color 0.3s ease;
+                        text-align: center;
+                        z-index: 2;
+                        pointer-events: auto;
+
+                        &:hover {
+                            background-color: #9e6edb;
+                        }
+                    }
+
+                    // Center content vertically when no description
+                    &:not(:has(p)) {
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+
+                        h3.title-only {
+                            position: static;
+                            transform: none;
+                            margin-bottom: 20px;
+                        }
+
+                        .card-link-button {
+                            margin-top: 0;
+                        }
                     }
                 }
 

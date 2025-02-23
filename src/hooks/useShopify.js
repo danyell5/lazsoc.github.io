@@ -3,6 +3,7 @@ import { getShopifyUI } from '../utils/shopifyLoader';
 
 export const useShopify = (collectionId, containerId) => {
     const [isReady, setIsReady] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         let isMounted = true;
@@ -299,8 +300,10 @@ export const useShopify = (collectionId, containerId) => {
                 });
 
                 setIsReady(true);
+                setIsLoading(false);
             } catch (error) {
                 console.error('Error initializing Shopify:', error);
+                setIsLoading(false);
             }
         };
 
@@ -318,5 +321,5 @@ export const useShopify = (collectionId, containerId) => {
         };
     }, [collectionId, containerId]);
 
-    return isReady;
+    return { isReady, isLoading };
 }; 

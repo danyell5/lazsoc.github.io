@@ -13,7 +13,9 @@ export const CardCarousel = (props) => {
         const header = fields.header;
         const cards = fields.cards?.map(card => ({
             title: card.fields.title,
-            description: card.fields.description
+            description: card.fields.description,
+            hyperlinkText: card.fields.hyperlinkText || '',
+            hyperlink: card.fields.link || ''
         })) || [];
 
         const updatedCarousel = {

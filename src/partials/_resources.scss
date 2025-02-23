@@ -1,0 +1,318 @@
+.resources-page {
+    min-height: 100vh;
+    background-color: #FCF7F2;
+    display: flex;
+    flex-direction: column;
+
+    .header-section {
+        width: 100%;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .resources-content {
+        flex: 1;
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+
+        h1 {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 40px;
+        }
+
+        .content-section {
+            margin-bottom: 60px;
+
+            h2 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 28px;
+                font-weight: 700;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #666;
+                margin-bottom: 30px;
+            }
+
+            .resource-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+
+                .resource-card {
+                    background: white;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    h3 {
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 16px;
+                    }
+
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+
+                        li {
+                            margin-bottom: 12px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            a {
+                                color: #53449B;
+                                text-decoration: none;
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 16px;
+                                transition: color 0.3s ease;
+
+                                &:hover {
+                                    color: #9e6edb;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .links-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+
+                .link-card {
+                    background: white;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    text-decoration: none;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    h3 {
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 14px;
+                        color: #666;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .guidelines, .updates {
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 20px 0 0;
+
+                    li {
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 16px;
+                        color: #666;
+                        margin-bottom: 12px;
+                        padding-left: 24px;
+                        position: relative;
+
+                        &:before {
+                            content: '•';
+                            position: absolute;
+                            left: 0;
+                            color: #53449B;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .contact-info {
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 16px;
+                    color: #666;
+                    margin-bottom: 8px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 60px;
+
+        .resources-content {
+            padding: 30px 20px;
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .content-section {
+                margin-bottom: 40px;
+
+                h2 {
+                    font-size: 24px;
+                    margin-bottom: 16px;
+                }
+
+                .resource-grid, .links-grid {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .resource-card, .link-card {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
+    &.refund-policy {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+
+        .resources-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 20px;
+
+            .content-section {
+                margin-bottom: 0;
+            }
+
+            .policy-content {
+                background: white;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+                .policy-title {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 28px;
+                    color: #333;
+                    text-align: center;
+                    margin-bottom: 24px;
+                }
+
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    color: #666;
+                    margin-bottom: 20px;
+
+                    strong {
+                        display: block;
+                        font-size: 20px;
+                        color: #333;
+                        margin-bottom: 16px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                a {
+                    color: #53449B;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #9e6edb;
+                    }
+                }
+
+                .contact-info {
+                    margin-top: 32px;
+                    padding-top: 20px;
+                    border-top: 1px solid #eee;
+
+                    p strong {
+                        color: #666;
+                        font-size: 16px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resources-content {
+                padding: 40px 20px;
+
+                .policy-content {
+                    padding: 24px;
+
+                    .policy-title {
+                        font-size: 24px;
+                        margin-bottom: 20px;
+                    }
+
+                    p {
+                        font-size: 15px;
+
+                        strong {
+                            font-size: 18px;
+                            margin-bottom: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

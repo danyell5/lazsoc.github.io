@@ -10,7 +10,7 @@ import Footer from '../components/footer/footer';
 const HomePage = () => {
   return (
     <div className="homepage">
-      <HeaderCarousel fetchId={'306Jw6IKAXW2jmyTmiyXlg'}/>
+      <HeaderCarousel fetchId={'306Jw6IKAXW2jmyTmiyXlg'} variant="homepage"/>
       <TextLeftRightImage fetchId={'7b9e9BHrW4lk0EoHL5ZKxU'} variant="homepage"/>
       <ThreeImageLeftTextRight fetchId={'4yUuMfOoMxWiqz95YD6PoE'} variant="homepage"/>
       <OneTextAboveFourImages fetchId={'79iTGlb6c8VzG3yaRU3M7T'} variant="homepage"/>
