@@ -195,21 +195,21 @@
                 aspect-ratio: 1;
                 border: 8px solid #000;
                 border-radius: 4px;
-                display: flex;
-                align-items: stretch;
                 overflow: hidden;
+                cursor: pointer;
 
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                     filter: grayscale(100%);
-                    transition: filter 0.3s ease;
+                    transition: all 0.3s ease;
                     display: block;
                     margin: 0;
 
                     &:hover {
                         filter: grayscale(0%);
+                        transform: scale(1.05);
                     }
                 }
 
@@ -248,6 +248,11 @@
             .images-container {
                 grid-template-columns: 1fr;
                 gap: 16px;
+
+                .image-item {
+                    max-width: 100%;
+                    width: 100%;
+                }
             }
         }
     }
