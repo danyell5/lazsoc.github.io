@@ -193,6 +193,96 @@ section.card-carousel {
         }
     }
 
+    &.grid-view {
+        background-color: #fdf8f4;
+        padding: 60px 0;
+
+        .carousel-wrapper {
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 30px;
+                padding: 20px;
+
+                @supports (grid-template-rows: masonry) {
+                    grid-template-rows: masonry;
+                }
+
+                &:has(.grid-card:last-child:nth-child(odd)) {
+                    .grid-card:last-child {
+                        margin: 0 auto;
+                        width: minmax(350px, 1fr);
+                    }
+                }
+
+                .grid-card {
+                    background-color: white;
+                    padding: 40px;
+                    border-radius: 16px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    border: 5px solid #9E6EDB;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 300px;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        border-color: #FFBF40;
+                    }
+
+                    h3 {
+                        color: #333;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 700;
+                        font-size: 24px;
+                        margin-bottom: 20px;
+                        text-align: center;
+                        width: 100%;
+
+                        &.title-only {
+                            font-size: 32px;
+                            margin: 0;
+                            text-align: center;
+                            width: 80%;
+                            margin-bottom: 20px;
+                        }
+                    }
+
+                    p {
+                        color: #333;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 16px;
+                        line-height: 1.6;
+                        text-align: center;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+
+                    .card-link-button {
+                        display: inline-block;
+                        background-color: #53449B;
+                        color: white;
+                        text-decoration: none;
+                        padding: 10px 20px;
+                        border-radius: 6px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 14px;
+                        font-weight: 600;
+                        transition: background-color 0.3s ease;
+                        text-align: center;
+
+                        &:hover {
+                            background-color: #9e6edb;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     @media (max-width: 768px) {
         padding: 40px 0;
 
@@ -236,6 +326,32 @@ section.card-carousel {
                 .dot {
                     width: 10px;
                     height: 10px;
+                }
+            }
+        }
+
+        &.grid-view {
+            padding: 40px 0;
+
+            .carousel-wrapper {
+                .grid-container {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                    padding: 15px;
+
+                    .grid-card {
+                        padding: 30px;
+                        min-height: 250px;
+
+                        h3 {
+                            font-size: 20px;
+                            margin-bottom: 15px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                        }
+                    }
                 }
             }
         }

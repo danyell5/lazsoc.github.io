@@ -11,6 +11,7 @@ export const CardCarouselSlide = (props) => {
 
     const getVariantClass = () => {
         if (variant === 'homepage') return 'homepage';
+        if (variant === 'gridView') return 'grid-view';
         return '';
     };
 
@@ -123,6 +124,23 @@ export const CardCarouselSlide = (props) => {
     };
 
     if (!cards || cards.length === 0) return null;
+
+    // If it's grid view, render all cards in a grid
+    if (variant === 'gridView') {
+        return (
+            <section className={`card-carousel ${getVariantClass()}`}>
+                <div className="carousel-wrapper">
+                    <div className="grid-container">
+                        {cards.map((card, index) => (
+                            <div key={index} className="grid-card">
+                                {renderCardContent(card)}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     // If there's only one card, just show it without navigation
     if (cards.length === 1) {

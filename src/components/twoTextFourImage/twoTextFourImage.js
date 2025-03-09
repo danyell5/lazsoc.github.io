@@ -18,13 +18,15 @@ export const TwoTextFourImage = (props) => {
         console.log(fields);
         const images = fields.images?.map(image => image.fields.file.url) || []
         const imageTitles = fields.images?.map(image => image.fields.title) || []
+        const imageDescriptions = fields.images?.map(image => image.fields.description) || []
 
         const updatedSlide = {
             id,
             slideTitle,
             slideDescription,
             images,
-            imageTitles
+            imageTitles,
+            imageDescriptions
         }
 
         setSlideData(updatedSlide)

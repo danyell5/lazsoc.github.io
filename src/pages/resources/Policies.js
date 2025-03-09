@@ -14,7 +14,10 @@ const Policies = () => {
                 />
             </div>
             <div className="resources-content">
-                <CardCarousel fetchId="43vMM7u2zepijIbHMTffX7" />
+                <CardCarousel 
+                    fetchId="43vMM7u2zepijIbHMTffX7" 
+                    variant="gridView"
+                />
             </div>
             <Footer />
         </div>

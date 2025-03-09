@@ -5,7 +5,6 @@ import Footer from '../../components/footer/footer';
 const TeamPage = () => {
     return (
         <div className="team-page">
-            <TwoTextFourImage fetchId={'3F5PJ79unyXEZNedypiz8R'} variant="carousel"/>
             <Footer />
         </div>
     )

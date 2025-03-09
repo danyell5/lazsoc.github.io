@@ -30,7 +30,7 @@ const ContactForm = () => {
                     from_name: formData.name,
                     from_email: formData.email,
                     message: formData.message,
-                    to_email: 'krish.chandarana@lazsoc.ca'
+                    to_email: 'info@lazsoc.ca'
                 },
                 '9Kn6gXHlH4nXZUsJE'
             );

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export const TwoTextFourImageSlide = (props) => {
-    const { id, images, imageTitles, slideTitle, slideDescription, variant } = props;
+    const { id, images, imageTitles, imageDescriptions, slideTitle, slideDescription, variant } = props;
     const [currentIndex, setCurrentIndex] = useState(0);
     const navigate = useNavigate();
 
@@ -37,7 +37,8 @@ export const TwoTextFourImageSlide = (props) => {
             const index = (currentIndex + i) % images.length;
             result.push({
                 image: images[index],
-                title: imageTitles?.[index]
+                title: imageTitles?.[index],
+                description: imageDescriptions?.[index]
             });
         }
         return result;
@@ -84,12 +85,17 @@ export const TwoTextFourImageSlide = (props) => {
                     {displayImages.map((item, index) => (
                         <div 
                             key={index} 
-                            className="image-item"
+                            className={`image-item ${item.description ? 'has-description' : ''}`}
                             onClick={() => handleImageClick(item.title)}
                             style={{ cursor: item.title === "Business Formal Rental Program" ? 'pointer' : 'default' }}
                         >
                             <img src={item.image} alt={item.title || `Image ${index + 1}`} />
-                            {item.title && (
+                            {item.description && (
+                                <div className="image-description">
+                                    <p>{item.description}</p>
+                                </div>
+                            )}
+                            {item.title && !item.description && (
                                 <div className="image-title">{item.title}</div>
                             )}
                         </div>
@@ -108,12 +114,17 @@ export const TwoTextFourImageSlide = (props) => {
                     {images?.map((image, index) => (
                         <div 
                             key={index} 
-                            className="image-item"
+                            className={`image-item ${imageDescriptions?.[index] ? 'has-description' : ''}`}
                             onClick={() => handleImageClick(imageTitles[index])}
                             style={{ cursor: imageTitles[index] === "Business Formal Rental Program" ? 'pointer' : 'default' }}
                         >
                             <img src={image} alt={imageTitles?.[index] || `Image ${index + 1}`} />
-                            {imageTitles?.[index] && (
+                            {imageDescriptions?.[index] && (
+                                <div className="image-description">
+                                    <p>{imageDescriptions[index]}</p>
+                                </div>
+                            )}
+                            {imageTitles?.[index] && !imageDescriptions?.[index] && (
                                 <div className="image-title">{imageTitles[index]}</div>
                             )}
                         </div>

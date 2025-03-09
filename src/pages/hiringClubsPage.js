@@ -10,6 +10,7 @@ const HiringDisclaimer = () => (
     <div className="hiring-disclaimer">
         <div className="disclaimer-content">
             <h2>Currently not hiring!</h2>
+            
             <p>Stay tuned for updates!</p>
         </div>
     </div>
