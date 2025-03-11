@@ -7,12 +7,7 @@ import Footer from '../../components/footer/footer';
 const ElectionResources = () => {
     return (
         <div className="resources-page election">
-            <div className="header-section">
-                <HeaderCarousel 
-                    fetchId={'3ZdRpHmC2ehO3cQ7vTQQa7'} 
-                    variant="clubsAssociation"
-                />
-            </div>
+        <HeaderCarousel fetchId={'3ZdRpHmC2ehO3cQ7vTQQa7'} variant="clubsAssociation"/>
             <div className="resources-content">
                 <CardCarousel 
                     fetchId="63k0bOKnqAX9zqibZG8Jnn" 

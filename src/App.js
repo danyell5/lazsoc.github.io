@@ -7,7 +7,6 @@ import WaterlooFavsPage from './pages/about/WaterlooFavsPage';
 import BusinessBytesPage from './pages/about/BusinessBytesPage';
 import ClubsAssociationsPage from './pages/clubsAssociationsPage';
 import HiringClubsPage from './pages/hiringClubsPage';
-import EDI from './pages/edi';
 import BusinessFormalRentalProgram from './pages/BusinessFormalRentalProgram';
 import ClubMemberships from './pages/ClubMemberships';
 import Events from './pages/events';
@@ -29,7 +28,6 @@ const PreloadComponent = () => {
       BusinessBytesPage,
       ClubsAssociationsPage,
       HiringClubsPage,
-      EDI,
       BusinessFormalRentalProgram,
       ClubMemberships,
       Events,
@@ -89,7 +87,6 @@ function App() {
         <Route path="/about/business-bytes" element={<BusinessBytesPage />} />
         <Route path="/clubs-associations" element={<ClubsAssociationsPage />} />
         <Route path="/hiring-clubs" element={<HiringClubsPage />} />
-        <Route path="/edi" element={<EDI />} />
         <Route path="/shop/business-formal" element={<BusinessFormalRentalProgram />} />
         <Route path="/shop/club-memberships" element={<ClubMemberships />} />
         <Route path="/shop/events" element={<Events />} />

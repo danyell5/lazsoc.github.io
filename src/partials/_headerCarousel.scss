@@ -144,18 +144,42 @@
     }
   
     &.clubsAssociation {
+        height: 100vh;
+        min-height: 100vh;
+        max-height: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
         &::before {
             display: none;
         }
   
         .textWrap {
+            transform: translateY(0);
+            text-align: center;
+            max-width: 1200px;
+            padding: 0 40px;
+            z-index: 2;
+
             h2 {
                 color: #FFBF40;
                 text-shadow: none;
+                font-size: clamp(40px, 8vw, 88.375px);
+                margin: 0;
             }
   
             p {
                 color: #FFBF40;
+                font-size: clamp(18px, 3vw, 24px);
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .textWrap {
+                padding: 0 20px;
             }
         }
     }

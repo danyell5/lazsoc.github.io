@@ -119,8 +119,6 @@ const TopNavigation = () => {
                         <li><NavLink to="/resources/refund-policy" className="dropdown-item">Refund Policy</NavLink></li>
                     </ul>
                 </li>
-
-                <li><NavLink to="/edi" className="nav-link">EDI</NavLink></li>
             </ul>
 
             {/* Mobile Menu Button */}
