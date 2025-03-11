@@ -1,0 +1,123 @@
+.team-display {
+    padding: 40px 0;
+    background-color: #FCF7F2;
+
+    .profiles-list {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 350px);
+        justify-content: center;
+        gap: 32px;
+        width: 100%;
+        padding: 0 40px;
+    }
+
+    .profile-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+
+        &:hover {
+            .profile-card {
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    .profile-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .headshot-wrapper {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        flex-shrink: 0;
+        border-radius: 50%;
+
+        .headshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.5);
+        }
+    }
+
+    .text-content {
+        padding-top: 20px;
+
+        .name {
+            color: #000;
+            font-family: Montserrat;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0 0 8px 0;
+        }
+
+        .role {
+            color: #000;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .profiles-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        padding: 40px 0;
+
+        .profiles-list {
+            padding: 0 40px;
+            grid-template-columns: repeat(auto-fit, 350px);
+            gap: 32px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 32px 0;
+
+        .profiles-list {
+            padding: 0 20px;
+            grid-template-columns: minmax(280px, 1fr);
+            gap: 24px;
+        }
+
+        .headshot-wrapper {
+            width: 80px;
+            height: 80px;
+
+            .headshot {
+                transform: scale(1.5);
+            }
+        }
+
+        .text-content {
+            padding-top: 12px;
+
+            .name {
+                font-size: 20px;
+                margin-bottom: 6px;
+            }
+
+            .role {
+                font-size: 14px;
+            }
+        }
+    }
+} 

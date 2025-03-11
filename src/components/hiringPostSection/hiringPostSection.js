@@ -10,7 +10,8 @@ const ROLE_CATEGORIES = [
     'Internal & EDI',
     'Marketing',
     'Operations',
-    'Technology'
+    'Technology',
+    'Other'
 ];
 
 export const HiringPostSection = ({ fetchId, onPostsLoaded }) => {
@@ -75,10 +76,30 @@ export const HiringPostSection = ({ fetchId, onPostsLoaded }) => {
 
     const getFilteredPosts = () => {
         if (selectedFilters.length === 0) return posts;
+        
         return posts.filter(post => {
-            const postRoleType = post.roleType.toLowerCase();
+            const postRoleType = post.roleType?.toLowerCase() || '';
+            
+            // If "Other" is selected, check for posts with role types not in the predefined categories
+            if (selectedFilters.includes('Other')) {
+                const predefinedCategories = [
+                    'club strategy',
+                    'corporate relations',
+                    'finance',
+                    'internal & edi',
+                    'marketing',
+                    'operations',
+                    'technology'
+                ];
+                
+                if (!predefinedCategories.includes(postRoleType)) {
+                    return true;
+                }
+            }
+            
+            // Check for other selected filters
             return selectedFilters.some(filter => 
-                postRoleType.includes(filter.toLowerCase())
+                postRoleType === filter.toLowerCase()
             );
         });
     };

@@ -28,6 +28,26 @@
         will-change: opacity;
     }
 
+    &.banner {
+        height: 400px;
+        min-height: 400px;
+        max-height: none;
+        padding: 0;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #FCF7F2;
+        
+        &::before {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            height: 300px;
+            min-height: 300px;
+        }
+    }
+
     &.homepage {
         height: 100vh;
         min-height: 100vh;

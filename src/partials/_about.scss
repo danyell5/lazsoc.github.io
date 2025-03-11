@@ -1,7 +1,6 @@
 .about-page {
     min-height: 100vh;
     background-color: #FCF7F2;
-    padding-top: 80px;
 
     .about-content {
         max-width: 1200px;
@@ -416,6 +415,43 @@
             .mission-statement, .share-section, .contribute-section {
                 padding: 24px;
             }
+        }
+    }
+}
+
+.header-section {
+    display: flex;
+    width: 1905px;
+    padding: 30px 262px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #FCF7F2;
+
+    h1 {
+        color: #53449B;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        .number {
+            color: #FDB518;
+        }
+    }
+
+    @media (max-width: 1920px) {
+        width: 100%;
+        padding: 30px 10%;
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 20px;
+        
+        h1 {
+            font-size: 36px;
         }
     }
 } 
