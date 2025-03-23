@@ -32,7 +32,6 @@ const ContactForm = () => {
                     message: formData.message,
                     to_email: 'info@lazsoc.ca'
                 },
-                '9Kn6gXHlH4nXZUsJE'
             );
             
             setStatusMessage('Message sent successfully!');

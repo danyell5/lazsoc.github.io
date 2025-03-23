@@ -6,9 +6,22 @@ import { client } from '../../client'
 const carouselCache = new Map();
 
 export const HeaderCarousel = (props) => {
-    const { fetchId, variant } = props;
+    const { fetchId, variant, isTopCarousel = false } = props;
     const [isCarouselLoading, setIsCarouselLoading] = useState(false);
     const [carouselSlides, setCarouselSlides] = useState([]);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+
+    // Update isMobile state on window resize
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 767);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const cleanUpCarouselSlides = useCallback((rawData) => {
         const { sys, fields } = rawData
@@ -52,6 +65,9 @@ export const HeaderCarousel = (props) => {
 
     // Early return if no slide data
     if (!carouselSlides.slideImage) return null;
+    
+    // Hide top carousels on mobile view
+    if (isTopCarousel && isMobile) return null;
 
     return (
         <div>

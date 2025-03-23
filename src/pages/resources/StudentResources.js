@@ -8,7 +8,7 @@ import TwoTextFourImage from '../../components/twoTextFourImage/twoTextFourImage
 const StudentResources = () => {
     return (
         <div className="resources-page student">
-            <HeaderCarousel fetchId={'52rWz12EkpW27XxRAGoinH'} variant="clubsAssociation"/>
+            <HeaderCarousel fetchId={'52rWz12EkpW27XxRAGoinH'} variant="clubsAssociation" isTopCarousel={true}/>
             <div className="resources-content">
                 <CardCarousel 
                     fetchId="2fFyHukhwQxxHuDR4LQOXq" 

@@ -59,7 +59,7 @@ export const useShopify = (collectionId, containerId) => {
                                         "padding": "0 10px"
                                     },
                                     "button": {
-                                        "position": "absolute",
+                                        "position": "relative",
                                         "bottom": "0",
                                         "left": "50%",
                                         "transform": "translateX(-50%)",

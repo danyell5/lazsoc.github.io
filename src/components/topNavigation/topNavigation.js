@@ -72,7 +72,10 @@ const TopNavigation = () => {
                     onMouseEnter={toggleAboutDropdown} 
                     onMouseLeave={toggleAboutDropdown}
                 >
-                    About <span className={`dropdown-arrow ${aboutDropdownOpen ? 'open' : ''}`}>&#9660;</span>
+                    About 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${aboutDropdownOpen ? 'open' : ''}`}>
+                      <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                    </svg>
                     <ul className={`dropdown-menu ${aboutDropdownOpen ? 'show' : ''}`}>
                         <li><NavLink to="/about/team" className="dropdown-item">The Team</NavLink></li>
                         <li><NavLink to="/about/waterloo-favs" className="dropdown-item">Our Waterloo Favs</NavLink></li>
@@ -85,7 +88,10 @@ const TopNavigation = () => {
                     onMouseEnter={toggleInvolvedDropdown} 
                     onMouseLeave={toggleInvolvedDropdown}
                 >
-                    Get Involved <span className={`dropdown-arrow ${involvedDropdownOpen ? 'open' : ''}`}>&#9660;</span>
+                    Get Involved 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${involvedDropdownOpen ? 'open' : ''}`}>
+                      <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                    </svg>
                     <ul className={`dropdown-menu ${involvedDropdownOpen ? 'show' : ''}`}>
                         <li><NavLink to="/clubs-associations" className="dropdown-item">Clubs and Associations</NavLink></li>
                         <li><NavLink to="/hiring-clubs" className="dropdown-item">Hiring and FAQ</NavLink></li>
@@ -97,7 +103,10 @@ const TopNavigation = () => {
                     onMouseEnter={toggleShopDropdown} 
                     onMouseLeave={toggleShopDropdown}
                 >
-                    Shop <span className={`dropdown-arrow ${shopDropdownOpen ? 'open' : ''}`}>&#9660;</span>
+                    Shop 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${shopDropdownOpen ? 'open' : ''}`}>
+                      <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                    </svg>
                     <ul className={`dropdown-menu ${shopDropdownOpen ? 'show' : ''}`}>
                         <li><NavLink to="/shop/business-formal" className="dropdown-item">Business Formal Rental Program</NavLink></li>
                         <li><NavLink to="/shop/club-memberships" className="dropdown-item">Club Memberships</NavLink></li>
@@ -111,7 +120,10 @@ const TopNavigation = () => {
                     onMouseEnter={toggleResourcesDropdown} 
                     onMouseLeave={toggleResourcesDropdown}
                 >
-                    Resources <span className={`dropdown-arrow ${resourcesDropdownOpen ? 'open' : ''}`}>&#9660;</span>
+                    Resources 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${resourcesDropdownOpen ? 'open' : ''}`}>
+                      <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                    </svg>
                     <ul className={`dropdown-menu ${resourcesDropdownOpen ? 'show' : ''}`}>
                         <li><NavLink to="/resources/election" className="dropdown-item">Election Resources</NavLink></li>
                         <li><NavLink to="/resources/policies" className="dropdown-item">Policies</NavLink></li>
@@ -143,7 +155,9 @@ const TopNavigation = () => {
                             onClick={toggleMobileAbout}
                         >
                             About
-                            <span className={`dropdown-arrow ${mobileAboutOpen ? 'open' : ''}`}>&#9660;</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${mobileAboutOpen ? 'open' : ''}`}>
+                              <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                            </svg>
                         </button>
                         <ul className={`mobile-dropdown-menu ${mobileAboutOpen ? 'show' : ''}`}>
                             <li><NavLink to="/about/team" className="dropdown-item" onClick={toggleMobileMenu}>The Team</NavLink></li>
@@ -158,7 +172,9 @@ const TopNavigation = () => {
                             onClick={toggleMobileInvolved}
                         >
                             Get Involved
-                            <span className={`dropdown-arrow ${mobileInvolvedOpen ? 'open' : ''}`}>&#9660;</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${mobileInvolvedOpen ? 'open' : ''}`}>
+                              <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                            </svg>
                         </button>
                         <ul className={`mobile-dropdown-menu ${mobileInvolvedOpen ? 'show' : ''}`}>
                             <li><NavLink to="/clubs-associations" className="dropdown-item" onClick={toggleMobileMenu}>Clubs and Associations</NavLink></li>
@@ -172,7 +188,9 @@ const TopNavigation = () => {
                             onClick={toggleMobileShop}
                         >
                             Shop
-                            <span className={`dropdown-arrow ${mobileShopOpen ? 'open' : ''}`}>&#9660;</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${mobileShopOpen ? 'open' : ''}`}>
+                              <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                            </svg>
                         </button>
                         <ul className={`mobile-dropdown-menu ${mobileShopOpen ? 'show' : ''}`}>
                             <li><NavLink to="/shop/business-formal" className="dropdown-item" onClick={toggleMobileMenu}>Business Formal Rental Program</NavLink></li>
@@ -188,7 +206,9 @@ const TopNavigation = () => {
                             onClick={toggleMobileResources}
                         >
                             Resources
-                            <span className={`dropdown-arrow ${mobileResourcesOpen ? 'open' : ''}`}>&#9660;</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="11" viewBox="0 0 20 11" fill="none" className={`dropdown-icon ${mobileResourcesOpen ? 'open' : ''}`}>
+                              <path d="M9.29289 9.20711C9.68342 9.59763 10.3166 9.59763 10.7071 9.20711L17.0711 2.84315C17.4616 2.45262 17.4616 1.81946 17.0711 1.42893C16.6805 1.03841 16.0474 1.03841 15.6569 1.42893L10 7.08579L4.34315 1.42893C3.95262 1.03841 3.31946 1.03841 2.92893 1.42893C2.53841 1.81946 2.53841 2.45262 2.92893 2.84315L9.29289 9.20711ZM9 7.5V8.5H11V7.5H9Z" fill="#53449B"/>
+                            </svg>
                         </button>
                         <ul className={`mobile-dropdown-menu ${mobileResourcesOpen ? 'show' : ''}`}>
                             <li><NavLink to="/resources/election" className="dropdown-item" onClick={toggleMobileMenu}>Election Resources</NavLink></li>
@@ -197,8 +217,6 @@ const TopNavigation = () => {
                             <li><NavLink to="/resources/refund-policy" className="dropdown-item" onClick={toggleMobileMenu}>Refund Policy</NavLink></li>
                         </ul>
                     </li>
-
-                    <li><NavLink to="/edi" className="nav-link" onClick={toggleMobileMenu}>EDI</NavLink></li>
                 </ul>
             </div>
         </nav>

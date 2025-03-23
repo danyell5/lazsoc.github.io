@@ -26,7 +26,7 @@ const HiringClubsPage = () => {
     return (
         <div className="hiring-clubs-page">
             <div className="beige-background">
-                <HeaderCarousel fetchId={'6BojRme8bZeXrRIWwJ2nwa'} variant="hiringClubsPage"/>
+                <HeaderCarousel fetchId={'6BojRme8bZeXrRIWwJ2nwa'} variant="hiringClubsPage" isTopCarousel={true}/>
                 <HiringPostSection 
                     fetchId={'5TL0Fgvngaq3aYXGonaEB5'} 
                     onPostsLoaded={handlePostsLoaded}

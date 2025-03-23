@@ -1,0 +1,19 @@
+/* Font utility classes */
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sora {
+  font-family: 'Sora', sans-serif;
+}
+
+/* Global typography defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p, a, button, input, textarea, select, li {
+  font-family: 'Sora', sans-serif;
+}
+
+/* You can add more global styles here */ 

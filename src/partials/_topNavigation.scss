@@ -88,6 +88,22 @@
         }
       }
 
+      // SVG dropdown icon
+      .dropdown-icon {
+        margin-left: 4px;
+        transition: transform 0.3s ease, fill 0.3s ease;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover {
+        .dropdown-icon path {
+          fill: #FFBF40;
+        }
+      }
+
       .dropdown-menu {
         position: absolute;
         top: 100%;
@@ -272,6 +288,22 @@
 
               &.open {
                 transform: rotate(180deg);
+              }
+            }
+            
+            .dropdown-icon {
+              transition: transform 0.3s ease, fill 0.3s ease;
+
+              &.open {
+                transform: rotate(180deg);
+              }
+            }
+            
+            &:hover {
+              color: #FFBF40;
+              
+              .dropdown-icon path {
+                fill: #FFBF40;
               }
             }
           }

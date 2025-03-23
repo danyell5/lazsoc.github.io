@@ -1,0 +1,15 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap');
+
+/* Font Variables */
+$montserrat: 'Montserrat', sans-serif;
+$sora: 'Sora', sans-serif;
+
+/* Font Mixins */
+@mixin montserrat {
+  font-family: $montserrat;
+}
+
+@mixin sora {
+  font-family: $sora;
+} 

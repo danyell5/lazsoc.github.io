@@ -11,6 +11,7 @@ const ClubsAssociationsPage = () => {
         <HeaderCarousel 
             fetchId={'5eIXcEvSwuepOKxBtKwHg7'} 
             variant="clubsAssociation"
+            isTopCarousel={true}
         />
         <CardCarousel fetchId={'2YDJePrN9czn5WFzopLk08'} />
         <LogoDisplay 

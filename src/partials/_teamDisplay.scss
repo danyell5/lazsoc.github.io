@@ -45,7 +45,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.5);
+            transform: scale(1.25);
         }
     }
 
@@ -55,7 +55,7 @@
         .name {
             color: #000;
             font-family: Montserrat;
-            font-size: 24px;
+            font-size: 22px;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
@@ -65,7 +65,7 @@
         .role {
             color: #000;
             font-family: Montserrat;
-            font-size: 16px;
+            font-size: 14px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -103,7 +103,7 @@
             height: 80px;
 
             .headshot {
-                transform: scale(1.5);
+                transform: scale(1.25);
             }
         }
 

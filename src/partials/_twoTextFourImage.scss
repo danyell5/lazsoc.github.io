@@ -16,6 +16,10 @@
             bottom: 40px;
             border: 5px solid #53449B;
             pointer-events: none;
+
+            @media (max-width: 1023px) {
+                display: none;
+            }
         }
 
         .title {
@@ -193,7 +197,7 @@
             .image-item {
                 position: relative;
                 aspect-ratio: 1;
-                border: 8px solid #000;
+                border: 8px solid #FEB967;
                 border-radius: 4px;
                 overflow: hidden;
                 cursor: pointer;

@@ -59,7 +59,8 @@ const ShopifyCollection = ({ collectionId, componentId, title }) => {
                                     },
                                     "border-radius": "9px",
                                     "padding-left": "46px",
-                                    "padding-right": "46px"
+                                    "padding-right": "46px",
+                                    "position": "relative",
                                 },
                                 "quantityInput": {
                                     "font-size": "14px",
