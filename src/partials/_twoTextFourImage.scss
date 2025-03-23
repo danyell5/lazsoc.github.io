@@ -103,21 +103,96 @@
             padding: 40px 20px;
 
             &::before {
-                top: 24px;
-                left: 20px;
-                right: 20px;
-                bottom: 20px;
+                display: none;
+            }
+
+            .title {
+                font-size: 26px;
+                padding: 0 12px;
+            }
+
+            .description {
+                font-size: 16px;
+                padding: 0 12px;
+                margin-bottom: 32px;
             }
 
             .images-container {
-                grid-template-columns: repeat(2, 1fr);
+                display: grid;
+                grid-template-columns: repeat(2, 85%);
+                grid-auto-flow: column;
+                grid-auto-columns: 85%;
+                overflow: auto;
                 gap: 16px;
+                padding: 12px;
+                margin-top: 20px;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: both mandatory;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                max-height: 80vh;
+                overflow-y: auto;
 
-                .image-item img {
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .image-item {
+                    scroll-snap-align: center;
                     width: 100%;
                     height: auto;
                     aspect-ratio: 1;
+                    margin: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 8px;
+                        margin-bottom: 8px;
+                    }
+
+                    .image-title {
+                        font-size: 14px;
+                        text-align: center;
+                        padding: 0 8px;
+                    }
+
+                    &:last-child {
+                        margin-right: 16px;
+                    }
                 }
+            }
+        }
+
+        @media (max-width: 480px) {
+            padding: 32px 16px;
+
+            .title {
+                font-size: 24px;
+            }
+
+            .description {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 24px;
+            }
+
+            .images-container {
+                grid-template-columns: repeat(1, 90%);
+                grid-auto-columns: 90%;
+                gap: 12px;
+
+                .image-item {
+                    .image-title {
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .shopify-container {
+                margin-top: 32px;
+                padding: 24px;
             }
         }
     }
@@ -248,38 +323,108 @@
         }
 
         @media (max-width: 768px) {
-            padding: 40px 20px;
+            padding: 32px 16px;
 
             .header-container {
                 flex-direction: column;
                 gap: 24px;
+                margin-bottom: 24px;
 
                 .text-content {
                     max-width: 100%;
+                    margin-left: 0;
 
                     .title {
-                        font-size: 32px;
+                        font-size: 26px;
                         text-align: center;
+                        margin-bottom: 12px;
                     }
 
                     .description {
+                        font-size: 16px;
                         text-align: center;
+                        padding: 0 12px;
                     }
                 }
 
                 .nav-buttons {
-                    justify-content: center;
-                    padding-top: 0;
+                    display: none;
                 }
             }
 
             .images-container {
-                grid-template-columns: 1fr;
+                display: grid;
+                grid-template-columns: repeat(2, 85%);
+                grid-auto-flow: column;
+                grid-auto-columns: 85%;
+                overflow: auto;
                 gap: 16px;
+                padding: 12px;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: both mandatory;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                max-height: 80vh;
+                overflow-y: auto;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
 
                 .image-item {
-                    max-width: 100%;
+                    scroll-snap-align: center;
+                    border-width: 6px;
                     width: 100%;
+                    height: auto;
+                    aspect-ratio: 1;
+                    margin: 0;
+
+                    &:last-child {
+                        margin-right: 16px;
+                    }
+
+                    .image-description {
+                        padding: 12px;
+                        
+                        p {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            padding: 24px 12px;
+
+            .header-container {
+                .text-content {
+                    .title {
+                        font-size: 24px;
+                    }
+
+                    .description {
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+
+            .images-container {
+                grid-template-columns: repeat(1, 90%);
+                grid-auto-columns: 90%;
+                gap: 12px;
+
+                .image-item {
+                    border-width: 5px;
+
+                    .image-description {
+                        padding: 16px;
+                        
+                        p {
+                            font-size: 18px;
+                        }
+                    }
                 }
             }
         }

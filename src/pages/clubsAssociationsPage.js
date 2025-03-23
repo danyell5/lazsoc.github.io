@@ -18,10 +18,6 @@ const ClubsAssociationsPage = () => {
             fetchId={'6MD7QOzgB8H8Te0yqaaVjl'} 
             variant="clubsAssociations"
         />
-        <TextLeftRightImage
-            fetchId={'5NlJR0sVu9su6yen5mTQ3G'}
-            variant="clubsAssociations"
-        />
         <Footer />
     </div>
   );

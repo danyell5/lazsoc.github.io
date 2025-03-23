@@ -233,65 +233,144 @@
     }
 
     @media (max-width: 768px) {
-        padding: 40px 20px;
+        padding: 30px 15px;
 
         .header-content {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            padding: 0 10px;
 
             .title {
-                font-size: 32px;
+                font-size: 28px;
+                margin-bottom: 15px;
             }
 
             .description {
-                font-size: 16px;
+                font-size: 15px;
+                line-height: 1.4;
             }
-
         }
 
         .logos-grid {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 15px;
 
             .logo-item {
-                max-width: 150px;
-                height: 100px;
-                padding: 15px;
+                max-width: 100%;
+                height: 90px;
+                padding: 10px;
+                margin: 0 auto;
+                width: 100%;
+
+                img {
+                    max-width: 90%;
+                    max-height: 90%;
+                }
+            }
+        }
+
+        &.clubsAssociations {
+            padding: 20px 15px;
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0;
+
+                .title-section {
+                    width: 100%;
+
+                    .title {
+                        font-size: 26px;
+                        margin-bottom: 10px;
+                        text-align: center;
+                    }
+
+                    .description {
+                        font-size: 15px;
+                        text-align: center;
+                        margin: 0 auto;
+                    }
+                }
+
+                .filter-toggle-button {
+                    display: none;
+                }
+            }
+
+            .filters-section {
+                display: none;
+            }
+
+            .logos-grid {
+                padding: 20px 15px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                min-height: 200px;
+
+                .logo-item {
+                    height: 120px;
+                    padding: 8px;
+
+                    img {
+                        width: 85%;
+                        height: 85%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 20px 10px;
+
+        .header-content {
+            .title {
+                font-size: 24px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+        }
+
+        .logos-grid {
+            gap: 12px;
+            padding: 12px;
+
+            .logo-item {
+                height: 80px;
+                padding: 8px;
             }
         }
 
         &.clubsAssociations {
             .header-content {
-                flex-direction: column;
-                gap: 20px;
-
                 .title-section {
                     .title {
-                        font-size: 32px;
-                    }
-
-                    .description {
-                        font-size: 16px;
+                        font-size: 24px;
                     }
                 }
+            }
 
-                .filter-toggle-button {
-                    width: 100%;
-                    justify-content: center;
-                    margin-top: 0;
+            .logos-grid {
+                padding: 15px;
+                gap: 12px;
+
+                .logo-item {
+                    height: 100px;
                 }
             }
 
             .filters-section {
                 .filter-container {
-                    padding: 15px 20px;
-                    
                     &.show {
-                        padding: 15px 20px;
+                        padding: 10px;
                     }
                     
                     .filter-button {
-                        padding: 6px 12px;
-                        font-size: 12px;
+                        padding: 5px 10px;
+                        font-size: 11px;
                     }
                 }
             }
