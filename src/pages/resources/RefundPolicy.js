@@ -48,7 +48,7 @@ const RefundPolicy = () => {
               guest list will not be allowed into the venue.
             </p>
 
-              <b><p
+              <b><p>
                   To request for a refund, please fill this <a href="https://forms.gle/1BRV9Xfv7d3C57Gr8"> form </a> </p> out, for any further questions about our policies, please contact us at{' '}
                   <a href="mailto:info@lazsoc.ca">info@lazsoc.ca</a>.
               </p></b>
