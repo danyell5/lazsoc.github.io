@@ -47,7 +47,7 @@ export const TextLeftRightImageSlide = (props) => {
             </p>
             {shouldShowButton && (
                 <a href={slideRedirectionUrl || "/about"} className="button-link sora">
-                    {slideDescriptionOne || "About Us"}
+                    {slideDescriptionOne || "Abouttt Us"}
                 </a>
             )}
         </div>

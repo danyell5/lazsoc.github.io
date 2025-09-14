@@ -17,15 +17,7 @@ const BusinessFormalRentalProgram = () => {
         <div className="shopify-page business-formal">
             <div className="shopify-content">
                 <h1>Business Formal Rental Program</h1>
-                {isLoading && (
-                    <div className="loading-state">Loading rental program...</div>
-                )}
-                {!isLoading && !isReady && (
-                    <div className="error-state">
-                        There was an error loading the rental program. Please try again later.
-                    </div>
-                )}
-                <div id={CONTAINER_ID} className={!isReady ? 'hidden' : ''}></div>
+               <h2> If in need of Business suite rentals, Email at saleena.hans@lazsoc.ca</h2>
             </div>
             <Footer />
         </div>
