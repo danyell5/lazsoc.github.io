@@ -1,52 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import TopNavigation from './components/topNavigation/topNavigation';
-import HomePage from './pages/homePage'
-import TeamPage from './pages/about/TeamPage';
-import WaterlooFavsPage from './pages/about/WaterlooFavsPage';
-import BusinessBytesPage from './pages/about/BusinessBytesPage';
-import ClubsAssociationsPage from './pages/clubsAssociationsPage';
-import HiringClubsPage from './pages/hiringClubsPage';
-import BusinessFormalRentalProgram from './pages/BusinessFormalRentalProgram';
-import ClubMemberships from './pages/ClubMemberships';
-import Events from './pages/events';
-import Merchandise from './pages/merchandise';
-import ElectionResources from './pages/resources/ElectionResources';
-import Policies from './pages/resources/Policies';
-import StudentResources from './pages/resources/StudentResources';
-import RefundPolicy from './pages/resources/RefundPolicy';
-import { getShopifyUI } from './utils/shopifyLoader';
+const TopNavigation = lazy(() => import('./components/topNavigation/topNavigation'))
+const HomePage = lazy(() => import('./pages/homePage'))
+const TeamPage = lazy(() => import('./pages/about/TeamPage'));
+const WaterlooFavsPage = lazy(() => import('./pages/about/WaterlooFavsPage'));
+const BusinessBytesPage = lazy(() => import('./pages/about/BusinessBytesPage'));
+const ClubsAssociationsPage = lazy(() => import('./pages/clubsAssociationsPage'));
+const HiringClubsPage = lazy(() => import('./pages/hiringClubsPage'));
+const BusinessFormalRentalProgram = lazy(() => import('./pages/BusinessFormalRentalProgram'));
+const ClubMemberships = lazy(() => import('./pages/ClubMemberships'));
+const Events = lazy(() => import('./pages/events'));
+const Merchandise = lazy(() => import('./pages/merchandise'));
+const ElectionResources = lazy(() => import ('./pages/resources/ElectionResources'));
+const Policies = lazy(() => import('./pages/resources/Policies'));
+const StudentResources = lazy(() => import('./pages/resources/StudentResources'));
+const RefundPolicy = lazy(() => import('./pages/resources/RefundPolicy'));
+const getShopifyUI  = lazy(() => import('./utils/shopifyLoader'));
+
+
 
 // Create a component to handle preloading
+
 const PreloadComponent = () => {
   useEffect(() => {
-    // Preload all page components
-    const components = [
-      HomePage,
-      TeamPage,
-      WaterlooFavsPage,
-      BusinessBytesPage,
-      ClubsAssociationsPage,
-      HiringClubsPage,
-      BusinessFormalRentalProgram,
-      ClubMemberships,
-      Events,
-      Merchandise,
-      ElectionResources,
-      Policies,
-      StudentResources
-    ];
-
-    // Initialize all components
-    components.forEach(Component => {
-      const elem = document.createElement('div');
-      elem.style.display = 'none';
-      document.body.appendChild(elem);
-      const instance = <Component />;
-      // Clean up
-      document.body.removeChild(elem);
-    });
-
     // Preload Shopify
     getShopifyUI().catch(console.error);
 
@@ -78,8 +54,9 @@ function App() {
 
   return (
     <div className="App">
-      <PreloadComponent />
+      
       <TopNavigation />
+    <Suspense fallback = {<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about/team" element={<TeamPage />} />
@@ -96,6 +73,7 @@ function App() {
         <Route path="/resources/student" element={<StudentResources />} />
         <Route path="/resources/refund-policy" element={<RefundPolicy />} />
       </Routes>
+    </Suspense>
     </div>
   );
 }
