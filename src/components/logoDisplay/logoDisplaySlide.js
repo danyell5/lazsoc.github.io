@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// If you prefer Link-based routing instead of a click handler, uncomment:
-// import { Link } from 'react-router-dom';
 
 export const LogoDisplaySlide = (props) => {
   const { 
@@ -14,7 +12,7 @@ export const LogoDisplaySlide = (props) => {
     categories,
     selectedFilters,
     onFilterChange,
-    onLogoClick,              // <-- NEW: accept click handler
+    onLogoClick,              
   } = props;
 
   const [showFilters, setShowFilters] = useState(false);
@@ -68,11 +66,6 @@ export const LogoDisplaySlide = (props) => {
             >
               <img src={logo.url} alt={alt} />
             </button>
-
-            // If you prefer <Link> instead, swap the button for:
-            // <Link key={`${logo.title || 'logo'}-${index}`} to={to} className="logo-item" aria-label={`Open ${alt}`}>
-            //   <img src={logo.url} alt={alt} />
-            // </Link>
           );
         })}
       </div>
