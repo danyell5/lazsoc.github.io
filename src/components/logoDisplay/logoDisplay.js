@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom';
 import LogoDisplaySlide from './logoDisplaySlide';
 import { client } from '../../client'
+
 
 const CATEGORIES = [
     'Accounting',
@@ -17,6 +19,14 @@ const CATEGORIES = [
     'Supply Chain'
 ];
 
+const ROUTE_BY_TITLE = {
+  'LAA Logo': '/clubs/laa',
+  // 'ACE Logo': '/clubs/ace',
+  // etc...
+};
+
+
+
 const CONSULTING_LOGOS = ['ACE Logo', 'JDCC Logo', 'LCC Logo'];
 const DIVERSE_LEADERSHIP_LOGOS = ['WILL Logo', 'BSOL Logo', 'ASIB Logo'];
 const FINANCE_LOGOS = ['LIFA Logo', 'LWIS Logo'];
@@ -29,6 +39,7 @@ export const LogoDisplay = (props) => {
     const [isLoading, setIsLoading] = useState(false);
     const [logoData, setLogoData] = useState(null);
     const [selectedFilters, setSelectedFilters] = useState([]);
+    const navigate = useNavigate();
 
     const cleanUpLogoData = useCallback((rawData) => {
         const { sys, fields } = rawData
@@ -160,6 +171,10 @@ export const LogoDisplay = (props) => {
         return [...new Set(filteredLogos)];
     }, [logoData, selectedFilters]);
 
+    const onLogoClick = useCallback((logo) => {
+        navigate(logo?.to || '/');
+    }, [navigate]);
+
     if (!logoData) return null;
 
     return (
@@ -169,6 +184,7 @@ export const LogoDisplay = (props) => {
             categories={CATEGORIES}
             selectedFilters={selectedFilters}
             onFilterChange={handleFilterChange}
+            onLogoClick={onLogoClick}
         />
     )
 }
