@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom';
 import LogoDisplaySlide from './logoDisplaySlide';
 import { client } from '../../client'
 
@@ -39,7 +38,6 @@ export const LogoDisplay = (props) => {
     const [isLoading, setIsLoading] = useState(false);
     const [logoData, setLogoData] = useState(null);
     const [selectedFilters, setSelectedFilters] = useState([]);
-    const navigate = useNavigate();
 
     const cleanUpLogoData = useCallback((rawData) => {
         const { sys, fields } = rawData
@@ -171,10 +169,6 @@ export const LogoDisplay = (props) => {
         return [...new Set(filteredLogos)];
     }, [logoData, selectedFilters]);
 
-    const onLogoClick = useCallback((logo) => {
-        navigate(logo?.to || '/');
-    }, [navigate]);
-
     if (!logoData) return null;
 
     return (
@@ -184,7 +178,6 @@ export const LogoDisplay = (props) => {
             categories={CATEGORIES}
             selectedFilters={selectedFilters}
             onFilterChange={handleFilterChange}
-            onLogoClick={onLogoClick}
         />
     )
 }

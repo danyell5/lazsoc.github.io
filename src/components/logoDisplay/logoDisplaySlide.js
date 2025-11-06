@@ -11,8 +11,7 @@ export const LogoDisplaySlide = (props) => {
     variant = "homepage",
     categories,
     selectedFilters,
-    onFilterChange,
-    onLogoClick,              
+    onFilterChange,          
   } = props;
 
   const [showFilters, setShowFilters] = useState(false);
@@ -60,8 +59,6 @@ export const LogoDisplaySlide = (props) => {
               key={`${logo.title || 'logo'}-${index}`}
               type="button"
               className="logo-item"
-              onClick={() => onLogoClick ? onLogoClick(logo) : window.location.assign(to)}
-              aria-label={`Open ${alt}`}
               style={{ background: 'transparent', border: 0, padding: 0, cursor: 'pointer' }}
             >
               <img src={logo.url} alt={alt} />
