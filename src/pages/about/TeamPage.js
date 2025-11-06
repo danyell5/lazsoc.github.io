@@ -11,7 +11,7 @@ const TeamPage = () => {
                 <h1>Empowering <span className='number'>6,000+ </span> students through leadership, innovation, and community.</h1>
             </div>
             <TextLeftRightImage fetchId={'4fBFEDA6VOuAML53T4CBcB'} variant="noButton"/>
-            <TeamDisplay fetchId="356Yw7RFQA6mc4PAR1TJMS"/>
+            <TeamDisplay fetchId={'356Yw7RFQA6mc4PAR1TJMS'}/>
             <TextLeftRightImage fetchId={'1bPZTm83ABna60A9w9oasb'} variant="noButton-inverted"/>
             <TeamDisplay fetchId={'5SiTvR5lZZyFv1s7AasRoO'}/>
             <TextLeftRightImage fetchId={'3KTp04eBNq4dJIxBm3KAQk'} variant="noButton"/>
