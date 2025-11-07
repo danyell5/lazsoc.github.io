@@ -17,7 +17,7 @@ const BusinessFormalRentalProgram = () => {
         <div className="shopify-page business-formal">
             <div className="shopify-content">
                 <h1>Business Formal Rental Program</h1>
-               <h2> If in need of Business suite rentals, Email at saleena.hans@lazsoc.ca</h2>
+               <h2> If you are in need of business formal attire, please email saleena.hans@lazsoc.ca</h2>
             </div>
             <Footer />
         </div>
