@@ -16,8 +16,9 @@ const BusinessFormalRentalProgram = () => {
     return (
         <div className="shopify-page business-formal">
             <div className="shopify-content">
-                <h1>Business Formal Rental Program</h1>
-               <h2> If you are in need of business formal attire, please email saleena.hans@lazsoc.ca</h2>
+                <h1>Need Business Formal Rental Clothing? </h1>
+                 <h2> In the Fall and Winter semesters, LazSoc hosts Suiting Up for Change, an opportunity to get formal business clothing for free </h2>
+               <h2> If you are in urgent need of business formal attire, please email saleena.hans@lazsoc.ca</h2>
             </div>
             <Footer />
         </div>
