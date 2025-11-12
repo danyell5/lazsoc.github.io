@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import LogoDisplaySlide from './logoDisplaySlide';
 import { client } from '../../client'
+import LOGO_LINKS from '../../config/logoLinks'
 
 
 const CATEGORIES = [
@@ -50,7 +51,9 @@ export const LogoDisplay = (props) => {
             url: logo.fields.file.url,
             title: logo.fields.title,
             logoTitle: logo.fields.title || '',
-            categories: logo.fields.categories || []
+            categories: logo.fields.categories || [],
+            // Prefer link from Contentful; fall back to repo mapping by title.
+            link: (logo.fields && (logo.fields.link || LOGO_LINKS[logo.fields.title])) || LOGO_LINKS[logo.fields.title] || null
         })) || []
 
         const updatedData = {

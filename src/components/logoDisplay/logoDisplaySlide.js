@@ -15,6 +15,12 @@ export const LogoDisplaySlide = (props) => {
   } = props;
 
   const [showFilters, setShowFilters] = useState(false);
+ 
+  const handleLogoClick = (logo) => {
+    if (logo.link) {
+      window.open(logo.link, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   return (
     <div id={id} className={`logo-display ${variant}`}>
@@ -59,7 +65,9 @@ export const LogoDisplaySlide = (props) => {
               key={`${logo.title || 'logo'}-${index}`}
               type="button"
               className="logo-item"
-              style={{ background: 'transparent', border: 0, padding: 0, cursor: 'pointer' }}
+              style={{ background: 'transparent', border: 0, padding: 0, cursor: logo.link ? 'pointer' : 'default' }}
+              onClick={() => handleLogoClick(logo)}
+              title={logo.link ? 'Click to visit' : ''}
             >
               <img src={logo.url} alt={alt} />
             </button>
