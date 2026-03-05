@@ -28,7 +28,7 @@ const HiringClubsPage = () => {
             <div className="beige-background">
                 <HeaderCarousel fetchId={'6BojRme8bZeXrRIWwJ2nwa'} variant="hiringClubsPage" isTopCarousel={true}/>
                 <HiringPostSection 
-                    fetchId={'3SSoJYEr6oOfeLi44BBLMh'} 
+                    fetchId={'3ia2NNjU7h11MwX8XqjMaf'} 
                     onPostsLoaded={handlePostsLoaded}
                 />
                 {!hasHiringPosts && <HiringDisclaimer />}
