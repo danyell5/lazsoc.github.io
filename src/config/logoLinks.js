@@ -18,15 +18,14 @@ const LOGO_LINKS = {
   "Real Estate Logo": "https://www.linkedin.com/company/realestatelaurier?originalSubdomain=ca",
   "LMA Logo": "https://www.instagram.com/lauriermarketing/?hl=en",
   "LSA Logo": "https://www.instagram.com/lauriersales/?hl=en",
-  "Ad Logo": "https://adclub.example.com",
   "Xlerate Logo": "https://www.instagram.com/xleratelazaridis/?hl=en",
-  "Link Logo": "https://www.instagram.com/thelinkwlu/?hl=en",
   "LEC Logo": "https://www.instagram.com/lauriereconclub/?hl=en",
   "Startup Logo": "https://www.winternship.ca/",
   "HRL Logo": "https://www.instagram.com/hrlaurier/?hl=en",
   "LIRA Logo": "https://www.laurierinsurance.com/",
   "LSCA Logo": "https://www.instagram.com/lauriersupplychain/?hl=en",
-  "Enactus Logo": "https://www.enactuslaurier.ca/",
+  "LPC Logo": "https://www.instagram.com/laurierprivatecapital/",
+  "AMP Logo": "https://www.instagram.com/amplaurier/"
   //not working? "AMP logo": "https://www.instagram.com/amplaurier/?hl=en "
   // Not working LPC 
 };

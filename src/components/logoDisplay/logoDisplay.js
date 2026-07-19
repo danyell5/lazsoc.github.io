@@ -29,9 +29,9 @@ const ROUTE_BY_TITLE = {
 
 const CONSULTING_LOGOS = ['ACE Logo', 'JDCC Logo', 'LCC Logo'];
 const DIVERSE_LEADERSHIP_LOGOS = ['WILL Logo', 'BSOL Logo', 'ASIB Logo'];
-const FINANCE_LOGOS = ['LIFA Logo', 'LWIS Logo'];
+const FINANCE_LOGOS = ['LIFA Logo', 'LPC Logo', 'LWIS Logo'];
 const GENERAL_LOGOS = ['Business and Economics Review Logo', 'SML Logo', 'Sustainability Logo', 'Real Estate Logo'];
-const MARKETING_LOGOS = ['LMA Logo', 'LSA Logo', 'Ad Logo'];
+const MARKETING_LOGOS = ['LMA Logo', 'LSA Logo'];
 const STUDENT_SUPPORT_LOGOS = ['Xlerate Logo', 'Link Logo'];
 
 export const LogoDisplay = (props) => {
