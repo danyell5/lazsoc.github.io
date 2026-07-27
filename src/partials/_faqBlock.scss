@@ -33,16 +33,17 @@
             margin: 0 auto;
 
             .question-item {
-                background: white;
-                border-radius: 8px;
-                margin-bottom: 16px;
+                background: #fff;
+                border-radius: 12px;
+                margin-bottom: 20px;
                 overflow: hidden;
                 cursor: pointer;
-                transition: all 0.3s ease;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease, transform 0.3s ease;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 
                 &:hover {
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
                 }
 
                 .question {
@@ -51,25 +52,29 @@
                     justify-content: space-between;
                     align-items: center;
                     background-color: white;
+                    transition: background-color 0.3s ease;
 
                     h3 {
                         font-size: 18px;
                         font-weight: 600;
                         color: #333;
                         margin: 0;
+                        transition: color 0.3s ease;
                     }
 
                     .toggle-icon {
                         font-size: 24px;
                         color: #53449B;
                         font-weight: 600;
+                        transition: transform 0.3s ease;
                     }
                 }
 
                 .answer {
                     max-height: 0;
                     opacity: 0;
-                    transition: all 0.3s ease;
+                    overflow: hidden;
+                    transition: max-height 0.5s ease, opacity 0.4s ease;
                     padding: 0 24px;
                     background-color: white;
 
@@ -78,12 +83,13 @@
                         font-size: 16px;
                         line-height: 1.6;
                         color: #666;
+                        padding-top: 16px;
                     }
                 }
 
                 &.open {
                     .answer {
-                        max-height: 500px;
+                        max-height: 600px;
                         opacity: 1;
                         padding: 0 24px 24px;
                     }
@@ -119,6 +125,10 @@
                     .answer {
                         padding: 0 16px;
 
+                        p {
+                            font-size: 15px;
+                        }
+
                         &.open {
                             padding: 0 16px 16px;
                         }
@@ -127,4 +137,4 @@
             }
         }
     }
-} 
+}

@@ -19,10 +19,29 @@
         display: block;
         width: 100%;
 
-        &:hover {
+        &:hover,
+        &:focus {
             .profile-card {
-                transform: translateY(-2px);
+                transform: translateY(-6px) scale(1.015) rotate(-0.3deg);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
+
+            .headshot-wrapper .headshot {
+                transform: scale(1.35);
+            }
+
+            .text-content .name {
+                color: #53449B;
+            }
+
+            .text-content .role {
+                color: #666;
+            }
+        }
+
+        &:focus {
+            outline: 2px solid #53449B;
+            outline-offset: 4px;
         }
     }
 
@@ -30,8 +49,9 @@
         display: flex;
         align-items: flex-start;
         gap: 24px;
-        transition: transform 0.3s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
         cursor: pointer;
+        border-radius: 80px;
     }
 
     .headshot-wrapper {
@@ -40,17 +60,20 @@
         overflow: hidden;
         flex-shrink: 0;
         border-radius: 50%;
+        transition: transform 0.4s ease;
 
         .headshot {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transform: scale(1.25);
+            transition: transform 0.4s ease;
         }
     }
 
     .text-content {
         padding-top: 20px;
+        transition: color 0.3s ease;
 
         .name {
             color: #000;
@@ -60,6 +83,7 @@
             font-weight: 600;
             line-height: normal;
             margin: 0 0 8px 0;
+            transition: color 0.3s ease;
         }
 
         .role {
@@ -70,6 +94,7 @@
             font-weight: 400;
             line-height: normal;
             margin: 0;
+            transition: color 0.3s ease;
         }
     }
 
@@ -120,4 +145,4 @@
             }
         }
     }
-} 
+}

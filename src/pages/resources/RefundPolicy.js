@@ -49,7 +49,10 @@ const RefundPolicy = () => {
             </p>
 
               <b><p>
-                  To request for a refund, please fill this <a href="https://forms.gle/1BRV9Xfv7d3C57Gr8"> form </a> out, for any further questions about our policies, please contact us at
+                  To request for a refund, please fill this 
+                  <a href="https://forms.gle/1BRV9Xfv7d3C57Gr8"> form </a> 
+                  out and inform us of its completion at this <a href="mailto:info@lazsoc.ca"> email </a>, 
+                  For any further questions about our policies, please contact us at
                   <a href="mailto:info@lazsoc.ca"> info@lazsoc.ca</a>.
               </p></b>
           </div>

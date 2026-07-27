@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import LogoDisplaySlide from './logoDisplaySlide';
 import { client } from '../../client'
+import LOGO_LINKS from '../../config/logoLinks'
+
 
 const CATEGORIES = [
     'Accounting',
@@ -17,11 +19,19 @@ const CATEGORIES = [
     'Supply Chain'
 ];
 
+const ROUTE_BY_TITLE = {
+  'LAA Logo': '/clubs/laa',
+  // 'ACE Logo': '/clubs/ace',
+  // etc...
+};
+
+
+
 const CONSULTING_LOGOS = ['ACE Logo', 'JDCC Logo', 'LCC Logo'];
 const DIVERSE_LEADERSHIP_LOGOS = ['WILL Logo', 'BSOL Logo', 'ASIB Logo'];
-const FINANCE_LOGOS = ['LIFA Logo', 'LWIS Logo'];
+const FINANCE_LOGOS = ['LIFA Logo', 'LPC Logo', 'LWIS Logo'];
 const GENERAL_LOGOS = ['Business and Economics Review Logo', 'SML Logo', 'Sustainability Logo', 'Real Estate Logo'];
-const MARKETING_LOGOS = ['LMA Logo', 'LSA Logo', 'Ad Logo'];
+const MARKETING_LOGOS = ['LMA Logo', 'LSA Logo'];
 const STUDENT_SUPPORT_LOGOS = ['Xlerate Logo', 'Link Logo'];
 
 export const LogoDisplay = (props) => {
@@ -41,7 +51,9 @@ export const LogoDisplay = (props) => {
             url: logo.fields.file.url,
             title: logo.fields.title,
             logoTitle: logo.fields.title || '',
-            categories: logo.fields.categories || []
+            categories: logo.fields.categories || [],
+            // Prefer link from Contentful; fall back to repo mapping by title.
+            link: (logo.fields && (logo.fields.link || LOGO_LINKS[logo.fields.title])) || LOGO_LINKS[logo.fields.title] || null
         })) || []
 
         const updatedData = {

@@ -11,21 +11,21 @@ const TeamPage = () => {
                 <h1>Empowering <span className='number'>6,000+ </span> students through leadership, innovation, and community.</h1>
             </div>
             <TextLeftRightImage fetchId={'4fBFEDA6VOuAML53T4CBcB'} variant="noButton"/>
-            <TeamDisplay fetchId="356Yw7RFQA6mc4PAR1TJMS"/>
-            <TextLeftRightImage fetchId={'2EA0sRssNq3IB9GZZj3IiK'} variant="noButton-inverted"/>
+            <TeamDisplay fetchId={'356Yw7RFQA6mc4PAR1TJMS'}/>
+            <TextLeftRightImage fetchId={'1bPZTm83ABna60A9w9oasb'} variant="noButton-inverted"/>
             <TeamDisplay fetchId={'5SiTvR5lZZyFv1s7AasRoO'}/>
-            <TextLeftRightImage fetchId={'3qMgnckgICYRPntyF9RDY3'} variant="noButton"/>
+            <TextLeftRightImage fetchId={'3KTp04eBNq4dJIxBm3KAQk'} variant="noButton"/>
             <TeamDisplay fetchId={'3Qf6GFckwORTf2LQsPAgkT'}/>
-            <TextLeftRightImage fetchId={'2WXqd1AcJJMgwbgZuIj8oT'} variant="noButton-inverted"/>
+            <TextLeftRightImage fetchId={'2ltWnJpMUd1ZSjPl8TUl1t'} variant="noButton-inverted"/>
             <TeamDisplay fetchId={'i1OILq0JzaZ0jud3JG41o'}/>
-            <TextLeftRightImage fetchId={'1wpamm4NCLy3h0Un6bPiR0'} variant="noButton"/>
+            <TextLeftRightImage fetchId={'3qFTr34w0oZxbtDZ8pX50k'} variant="noButton"/>
             <TeamDisplay fetchId={'4mCs4yt3BZ2zkV3QXJyxVQ'}/>
-            <TextLeftRightImage fetchId={'4an4lPR5NUdVte38EkNo5X'} variant="noButton-inverted"/>
+            <TextLeftRightImage fetchId={'7xcH9W2lvq1NAPJu7ccPbp'} variant="noButton-inverted"/>
             <TeamDisplay fetchId={'2QcHb4s6Ez0rxYNr6qRooq'}/>
-            <TextLeftRightImage fetchId={'58Hcd4WeH7AjLsjqSQ7Zc6'} variant="noButton"/>
+            <TextLeftRightImage fetchId={'4tZy8GvWA1PhFFSIPVCrWS'} variant="noButton"/>
             <TeamDisplay fetchId={'1XIGz7wQcCNIBFTprQUvLG'}/>
-            <TextLeftRightImage fetchId={'9WBKM0BeYqX1XXbzc4Je0'} variant="noButton-inverted"/>
-            <TeamDisplay fetchId={'3yzsGn20BnLdubnWkaKzoR'}/>
+            <TextLeftRightImage fetchId={'7FcgAC0jho1hejJfaCCtYy'} variant="noButton-inverted"/>
+            <TeamDisplay fetchId={'2cT0BimbFImZSQw3TUDvo9'}/>
             <Footer />
         </div>
     )

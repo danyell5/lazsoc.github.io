@@ -15,7 +15,7 @@ const HiringDisclaimer = () => (
         </div>
     </div>
 );
-
+ 
 const HiringClubsPage = () => {
     const [hasHiringPosts, setHasHiringPosts] = useState(true);
 
@@ -28,7 +28,7 @@ const HiringClubsPage = () => {
             <div className="beige-background">
                 <HeaderCarousel fetchId={'6BojRme8bZeXrRIWwJ2nwa'} variant="hiringClubsPage" isTopCarousel={true}/>
                 <HiringPostSection 
-                    fetchId={'5TL0Fgvngaq3aYXGonaEB5'} 
+                    fetchId={'3ia2NNjU7h11MwX8XqjMaf'} 
                     onPostsLoaded={handlePostsLoaded}
                 />
                 {!hasHiringPosts && <HiringDisclaimer />}

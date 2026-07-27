@@ -1,6 +1,6 @@
 .business-byte-section {
     padding: 90px;
-    background-color: #FCF7F2;
+    background-color: #ffffff;
 
     .posts-grid {
         display: grid;
@@ -15,17 +15,21 @@
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
         cursor: pointer;
+        border: 2px solid transparent;
 
         &:hover {
-            transform: translateY(-5px);
+            transform: translateY(-12px) scale(1.015) rotate(-0.5deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            border: 2px solid #f0e7ff;
         }
 
         .image-wrapper {
             width: 100%;
             height: 250px;
             overflow: hidden;
+            position: relative;
 
             img {
                 width: 100%;
@@ -33,6 +37,12 @@
                 object-fit: cover;
                 object-position: center;
                 background-color: #FCF7F2;
+                transition: transform 0.5s ease;
+
+                // Zoom effect
+                .business-byte-card:hover & {
+                    transform: scale(1.08);
+                }
             }
         }
 
@@ -45,6 +55,11 @@
                 font-size: 20px;
                 font-weight: 600;
                 margin-bottom: 8px;
+                transition: color 0.3s ease;
+
+                .business-byte-card:hover & {
+                    color: #53449B;
+                }
             }
 
             .date {
@@ -88,6 +103,11 @@
             cursor: pointer;
             color: #333;
             z-index: 2;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.2);
+            }
         }
 
         .modal-image {
@@ -131,19 +151,20 @@
 
                 p {
                     margin-bottom: 1.2em;
-                    
+
                     &:last-child {
                         margin-bottom: 0;
                     }
                 }
 
-                strong, b {
+                strong,
+                b {
                     font-weight: 700;
                 }
 
                 br {
                     display: block;
-                    content: "";
+                    content: '';
                     margin-top: 1em;
                 }
             }
@@ -175,4 +196,4 @@
             }
         }
     }
-} 
+}
